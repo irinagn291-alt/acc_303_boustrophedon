@@ -46,7 +46,6 @@
 		C7F82D7996B923A6D277322D /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9D4C6404E6213302EA5CAD /* QuizView.swift */; };
 		D146D1353ABD6A4BD3931947 /* OxType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C8B7CE4C68E5F6AE4EE89 /* OxType.swift */; };
 		D47E78909580C7AB6217055A /* QuietPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15091DE609CD440A865945E7 /* QuietPage.swift */; };
-		D9404F95A98A353BBECD61CD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43E2373809CEC65788782C55 /* Info.plist */; };
 		E4D96159185954DA07E61AC1 /* FurrowTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F05C9A6AA6AF3937800B99A /* FurrowTray.swift */; };
 		EC4F7C88F76B90D4B984B742 /* ReviewScreenKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593873B8667F7CB4823C551 /* ReviewScreenKey.swift */; };
 		ED8CABCFD73B7A58121851DF /* FurrowStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E615C1B6B21ECBBBFF38262 /* FurrowStore.swift */; };
@@ -98,7 +97,6 @@
 		2AFA357942629CB9B8E98239 /* OxMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxMotion.swift; sourceTree = "<group>"; };
 		2F05C9A6AA6AF3937800B99A /* FurrowTray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowTray.swift; sourceTree = "<group>"; };
 		3E8AEB7A65C4D7DE16A4C069 /* Boustrophedon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boustrophedon.swift; sourceTree = "<group>"; };
-		43E2373809CEC65788782C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		441A3001B6A8D73F23E9A03B /* GalleryShelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryShelf.swift; sourceTree = "<group>"; };
 		4A0EF20627D327808EDB334E /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E615C1B6B21ECBBBFF38262 /* FurrowStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowStore.swift; sourceTree = "<group>"; };
@@ -263,7 +261,6 @@
 				8C0379081C44BF4A1C08FB63 /* Assets.xcassets */,
 				A3AAF71EB64F8A3F81EFC9B9 /* BoustrophedonApp.swift */,
 				B259A98CC08E0539D0AE2318 /* ContentView.swift */,
-				43E2373809CEC65788782C55 /* Info.plist */,
 				FFDF4FBF0206027AF783A260 /* FaceMark */,
 				BCBA81BB2BAD29728D33FDB1 /* Furrow */,
 				68724ED26F076D9702E825F4 /* Stichos */,
@@ -397,7 +394,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				900268F4699CB1163994CBD0 /* Assets.xcassets in Resources */,
-				D9404F95A98A353BBECD61CD /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
