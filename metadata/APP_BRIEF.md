@@ -1,4 +1,4 @@
-<!-- gf-brief source=bce77b798c64c4b70106cab6fbbd53587a115d41a6c846c0051fa57c44d8873c written=2026-09-26T02:03:58+03:00 -->
+<!-- gf-brief source=bce77b798c64c4b70106cab6fbbd53587a115d41a6c846c0051fa57c44d8873c written=2026-09-26T02:04:40+03:00 -->
 # Boustrophedon
 ## What it is
 Boustrophedon is a quiet practice app for facing National Gallery painting captions. You save a painting, lay its maker or title as a line where every other word runs backward, then tap those words until they read forward. It is for anyone who wants a short, on-device word puzzle tied to real gallery works.
