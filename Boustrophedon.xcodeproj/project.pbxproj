@@ -1,0 +1,849 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		00A13F6B2FBE328768E37D9E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B259A98CC08E0539D0AE2318 /* ContentView.swift */; };
+		0AD9EDFCD37772061ACFA83A /* CatalogSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD37B4E2687A3D7789DA5B /* CatalogSearch.swift */; };
+		0B90661AB1AB180CB882D5E0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E57DE45F3542407009729285 /* Alamofire */; };
+		0C195A3488DBC933FEC4A26E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054DA40E8856602864BAF2F /* OnboardingView.swift */; };
+		117A5D7CA4210550E08A0D1A /* Boustrophedon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8AEB7A65C4D7DE16A4C069 /* Boustrophedon.swift */; };
+		1432E4068C69E7E4319A1B9C /* OxMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA357942629CB9B8E98239 /* OxMotion.swift */; };
+		1AFABBA8321FE980C4F44BCC /* OxPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD183B3BA244B15AC55DA4 /* OxPalette.swift */; };
+		1BE6430DEB4D5EB527686A44 /* FaceButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E11526003AA3D4B4D80D1C0 /* FaceButtonStyle.swift */; };
+		1BE7ACC07462D0290638B9D9 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = F370F429BA72A731D0EE515C /* OneSignalExtension */; };
+		2A569611C5CE2FE47021D5AF /* Furrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D34D84FA9F874ABC7C4647 /* Furrow.swift */; };
+		2DA6832349FD5BF8A95A0A21 /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD988CFC59E05C9FD4E02371 /* Work.swift */; };
+		3490B85927A1753D547E5D29 /* YawMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B5112A8D6E8277384511C /* YawMark.swift */; };
+		413006FB146B1A81D751F550 /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = A149AA0BE65C7040BB8D365F /* OneSignalInAppMessages */; };
+		477EA472B292C327F365D4AA /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6F5D9EBAF72B7EBE37C364 /* ExploreView.swift */; };
+		55A516D0FFC83152BB455F2B /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BF0B55F773F8164EE2328A /* NotificationService.swift */; };
+		5BE8580481E1FF1AF9690514 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2606318F8BBF663BB907C15E /* SavedView.swift */; };
+		61DE71D252A50B1CE002122C /* OxRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA0CBA6C15F3EF3B080FC2 /* OxRadius.swift */; };
+		63E30E75F4C3A455ED2C5793 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 1F5E91582252AD055263BC0D /* OneSignalFramework */; };
+		6934BCB6E4A3A72F020F247E /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4A0EF20627D327808EDB334E /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		6D141AD4B918931AF078BF35 /* OxFigures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275BBF3263700EAE9E0EF8F4 /* OxFigures.swift */; };
+		75D99832A730F3CBC6725D84 /* GalleryShelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441A3001B6A8D73F23E9A03B /* GalleryShelf.swift */; };
+		76BA153A8348DDB28E1B8F42 /* CatalogClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8054FFCD57FC9C30F6E8556D /* CatalogClient.swift */; };
+		77769658CB153C1013718452 /* FurrowDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD271B99AAAB6CC6175084EF /* FurrowDocument.swift */; };
+		7802FBEBB653C13E2A68A928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1395A52C8AA3FB4F1D7EF2D /* AppDelegate.swift */; };
+		7C0860944DC304B4F693A272 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5EE3D0C88F1C7597E65C8 /* SettingsView.swift */; };
+		8034294D5FF3D1B3CB7A7246 /* FurrowVault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9217A25F901AD931BF4610 /* FurrowVault.swift */; };
+		835A38F05FF8FA6B970E415B /* DayKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72107806F6070456DA6414 /* DayKey.swift */; };
+		892753D587D1416397501E4B /* FaceMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B7795010D1AA7291D8A0E /* FaceMark.swift */; };
+		900268F4699CB1163994CBD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0379081C44BF4A1C08FB63 /* Assets.xcassets */; };
+		91B702EF9BB89FE82DD08791 /* FurrowIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB479C0BB2A7AC58DA3A62 /* FurrowIntents.swift */; };
+		973332B2DA1248EDECD1EF3E /* OxSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00084FE51FF5EF0839F9BFB6 /* OxSpace.swift */; };
+		9D194DE33362783AC90FA192 /* BoustrophedonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AAF71EB64F8A3F81EFC9B9 /* BoustrophedonApp.swift */; };
+		A8B693FA47E11A4C1CC18F42 /* BoustrophedonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78729740F40E2CC5F392705E /* BoustrophedonTests.swift */; };
+		AD4CBC55EA0C6E5E49ED2D4E /* FurrowField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2293312F53EAB5DD08FDA60C /* FurrowField.swift */; };
+		C08DD287F6585ACD9EF99827 /* Stichos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C48410E9F7AEDC6CB5C8A37 /* Stichos.swift */; };
+		C30BF1202FE608609C3A55A7 /* FurrowLinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E907EFA7EBD422DDE2ED359D /* FurrowLinks.swift */; };
+		C7F82D7996B923A6D277322D /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC9D4C6404E6213302EA5CAD /* QuizView.swift */; };
+		D146D1353ABD6A4BD3931947 /* OxType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C8B7CE4C68E5F6AE4EE89 /* OxType.swift */; };
+		D47E78909580C7AB6217055A /* QuietPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15091DE609CD440A865945E7 /* QuietPage.swift */; };
+		D9404F95A98A353BBECD61CD /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 43E2373809CEC65788782C55 /* Info.plist */; };
+		E4D96159185954DA07E61AC1 /* FurrowTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F05C9A6AA6AF3937800B99A /* FurrowTray.swift */; };
+		EC4F7C88F76B90D4B984B742 /* ReviewScreenKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593873B8667F7CB4823C551 /* ReviewScreenKey.swift */; };
+		ED8CABCFD73B7A58121851DF /* FurrowStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E615C1B6B21ECBBBFF38262 /* FurrowStore.swift */; };
+		F8779DFD3254BF746EDE61B7 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7653AA76CE02614DABC053F /* Turn.swift */; };
+		F9843C938350F0A605AFCE71 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127D5630A6482467401A5331 /* APIConfig.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0F6E74DFFC72651423EB1088 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 223FD8277F2AA3187A4C2EF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E653C4B79956E8D98C4D4F05;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+		C49785600CCF7AED3DC7DF41 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 223FD8277F2AA3187A4C2EF4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A7B8012437A98A9C16C6ABA2;
+			remoteInfo = Boustrophedon;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		494E7F69A34B19D2B46FB212 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				6934BCB6E4A3A72F020F247E /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		00084FE51FF5EF0839F9BFB6 /* OxSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxSpace.swift; sourceTree = "<group>"; };
+		0A9217A25F901AD931BF4610 /* FurrowVault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowVault.swift; sourceTree = "<group>"; };
+		0D72107806F6070456DA6414 /* DayKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayKey.swift; sourceTree = "<group>"; };
+		127D5630A6482467401A5331 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
+		15091DE609CD440A865945E7 /* QuietPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuietPage.swift; sourceTree = "<group>"; };
+		1C48410E9F7AEDC6CB5C8A37 /* Stichos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stichos.swift; sourceTree = "<group>"; };
+		2293312F53EAB5DD08FDA60C /* FurrowField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowField.swift; sourceTree = "<group>"; };
+		2606318F8BBF663BB907C15E /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
+		275BBF3263700EAE9E0EF8F4 /* OxFigures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxFigures.swift; sourceTree = "<group>"; };
+		2AFA357942629CB9B8E98239 /* OxMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxMotion.swift; sourceTree = "<group>"; };
+		2F05C9A6AA6AF3937800B99A /* FurrowTray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowTray.swift; sourceTree = "<group>"; };
+		3E8AEB7A65C4D7DE16A4C069 /* Boustrophedon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boustrophedon.swift; sourceTree = "<group>"; };
+		43E2373809CEC65788782C55 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		441A3001B6A8D73F23E9A03B /* GalleryShelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryShelf.swift; sourceTree = "<group>"; };
+		4A0EF20627D327808EDB334E /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E615C1B6B21ECBBBFF38262 /* FurrowStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowStore.swift; sourceTree = "<group>"; };
+		5D6F5D9EBAF72B7EBE37C364 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
+		736B5112A8D6E8277384511C /* YawMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YawMark.swift; sourceTree = "<group>"; };
+		76CD37B4E2687A3D7789DA5B /* CatalogSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogSearch.swift; sourceTree = "<group>"; };
+		78729740F40E2CC5F392705E /* BoustrophedonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoustrophedonTests.swift; sourceTree = "<group>"; };
+		8054FFCD57FC9C30F6E8556D /* CatalogClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogClient.swift; sourceTree = "<group>"; };
+		805C8B7CE4C68E5F6AE4EE89 /* OxType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxType.swift; sourceTree = "<group>"; };
+		8725FC32397D5C3ECB5986CD /* Boustrophedon.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Boustrophedon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C0379081C44BF4A1C08FB63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E11526003AA3D4B4D80D1C0 /* FaceButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceButtonStyle.swift; sourceTree = "<group>"; };
+		91D34D84FA9F874ABC7C4647 /* Furrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Furrow.swift; sourceTree = "<group>"; };
+		A3AAF71EB64F8A3F81EFC9B9 /* BoustrophedonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoustrophedonApp.swift; sourceTree = "<group>"; };
+		A9D5EE3D0C88F1C7597E65C8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		B1395A52C8AA3FB4F1D7EF2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B259A98CC08E0539D0AE2318 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B34B7795010D1AA7291D8A0E /* FaceMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceMark.swift; sourceTree = "<group>"; };
+		B7653AA76CE02614DABC053F /* Turn.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Turn.swift; sourceTree = "<group>"; };
+		B9BF0B55F773F8164EE2328A /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		B9DB479C0BB2A7AC58DA3A62 /* FurrowIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowIntents.swift; sourceTree = "<group>"; };
+		BC9D4C6404E6213302EA5CAD /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
+		BD988CFC59E05C9FD4E02371 /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
+		D48EA6DBA60A98E77DAC2E6A /* BoustrophedonTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BoustrophedonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E907EFA7EBD422DDE2ED359D /* FurrowLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowLinks.swift; sourceTree = "<group>"; };
+		F054DA40E8856602864BAF2F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		F0CA0CBA6C15F3EF3B080FC2 /* OxRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxRadius.swift; sourceTree = "<group>"; };
+		F593873B8667F7CB4823C551 /* ReviewScreenKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewScreenKey.swift; sourceTree = "<group>"; };
+		F8FD183B3BA244B15AC55DA4 /* OxPalette.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxPalette.swift; sourceTree = "<group>"; };
+		FD271B99AAAB6CC6175084EF /* FurrowDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowDocument.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3564B18D7155F3D9EEA0004C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1BE7ACC07462D0290638B9D9 /* OneSignalExtension in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BB4A5B13BCBBC1DB46DBBF20 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B90661AB1AB180CB882D5E0 /* Alamofire in Frameworks */,
+				63E30E75F4C3A455ED2C5793 /* OneSignalFramework in Frameworks */,
+				413006FB146B1A81D751F550 /* OneSignalInAppMessages in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		240E8AD4750A899B041FA492 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				B9BF0B55F773F8164EE2328A /* NotificationService.swift */,
+			);
+			path = OneSignalNotificationServiceExtension;
+			sourceTree = "<group>";
+		};
+		579B77218A06A469F22D4A6C /* Turn */ = {
+			isa = PBXGroup;
+			children = (
+				B7653AA76CE02614DABC053F /* Turn.swift */,
+			);
+			path = Turn;
+			sourceTree = "<group>";
+		};
+		68724ED26F076D9702E825F4 /* Stichos */ = {
+			isa = PBXGroup;
+			children = (
+				1C48410E9F7AEDC6CB5C8A37 /* Stichos.swift */,
+			);
+			path = Stichos;
+			sourceTree = "<group>";
+		};
+		70E695ACD63C11AA96E0159F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8725FC32397D5C3ECB5986CD /* Boustrophedon.app */,
+				D48EA6DBA60A98E77DAC2E6A /* BoustrophedonTests.xctest */,
+				4A0EF20627D327808EDB334E /* OneSignalNotificationServiceExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		7F8B8D26FA448A88F5475059 = {
+			isa = PBXGroup;
+			children = (
+				EDAC1BA820BE25210EE5BFF6 /* Boustrophedon */,
+				8BF15735887ADC01EE28FED6 /* BoustrophedonTests */,
+				240E8AD4750A899B041FA492 /* OneSignalNotificationServiceExtension */,
+				70E695ACD63C11AA96E0159F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8BF15735887ADC01EE28FED6 /* BoustrophedonTests */ = {
+			isa = PBXGroup;
+			children = (
+				78729740F40E2CC5F392705E /* BoustrophedonTests.swift */,
+			);
+			path = BoustrophedonTests;
+			sourceTree = "<group>";
+		};
+		B2191947F91FC2842ED5A992 /* Work */ = {
+			isa = PBXGroup;
+			children = (
+				8054FFCD57FC9C30F6E8556D /* CatalogClient.swift */,
+				76CD37B4E2687A3D7789DA5B /* CatalogSearch.swift */,
+				5D6F5D9EBAF72B7EBE37C364 /* ExploreView.swift */,
+				441A3001B6A8D73F23E9A03B /* GalleryShelf.swift */,
+				2606318F8BBF663BB907C15E /* SavedView.swift */,
+				BD988CFC59E05C9FD4E02371 /* Work.swift */,
+			);
+			path = Work;
+			sourceTree = "<group>";
+		};
+		BCBA81BB2BAD29728D33FDB1 /* Furrow */ = {
+			isa = PBXGroup;
+			children = (
+				3E8AEB7A65C4D7DE16A4C069 /* Boustrophedon.swift */,
+				0D72107806F6070456DA6414 /* DayKey.swift */,
+				8E11526003AA3D4B4D80D1C0 /* FaceButtonStyle.swift */,
+				91D34D84FA9F874ABC7C4647 /* Furrow.swift */,
+				FD271B99AAAB6CC6175084EF /* FurrowDocument.swift */,
+				2293312F53EAB5DD08FDA60C /* FurrowField.swift */,
+				B9DB479C0BB2A7AC58DA3A62 /* FurrowIntents.swift */,
+				E907EFA7EBD422DDE2ED359D /* FurrowLinks.swift */,
+				4E615C1B6B21ECBBBFF38262 /* FurrowStore.swift */,
+				2F05C9A6AA6AF3937800B99A /* FurrowTray.swift */,
+				0A9217A25F901AD931BF4610 /* FurrowVault.swift */,
+				F054DA40E8856602864BAF2F /* OnboardingView.swift */,
+				275BBF3263700EAE9E0EF8F4 /* OxFigures.swift */,
+				2AFA357942629CB9B8E98239 /* OxMotion.swift */,
+				F8FD183B3BA244B15AC55DA4 /* OxPalette.swift */,
+				F0CA0CBA6C15F3EF3B080FC2 /* OxRadius.swift */,
+				00084FE51FF5EF0839F9BFB6 /* OxSpace.swift */,
+				805C8B7CE4C68E5F6AE4EE89 /* OxType.swift */,
+				15091DE609CD440A865945E7 /* QuietPage.swift */,
+				BC9D4C6404E6213302EA5CAD /* QuizView.swift */,
+				F593873B8667F7CB4823C551 /* ReviewScreenKey.swift */,
+				A9D5EE3D0C88F1C7597E65C8 /* SettingsView.swift */,
+			);
+			path = Furrow;
+			sourceTree = "<group>";
+		};
+		DC011017CFA4B577610BEB0A /* YawMark */ = {
+			isa = PBXGroup;
+			children = (
+				736B5112A8D6E8277384511C /* YawMark.swift */,
+			);
+			path = YawMark;
+			sourceTree = "<group>";
+		};
+		EDAC1BA820BE25210EE5BFF6 /* Boustrophedon */ = {
+			isa = PBXGroup;
+			children = (
+				127D5630A6482467401A5331 /* APIConfig.swift */,
+				B1395A52C8AA3FB4F1D7EF2D /* AppDelegate.swift */,
+				8C0379081C44BF4A1C08FB63 /* Assets.xcassets */,
+				A3AAF71EB64F8A3F81EFC9B9 /* BoustrophedonApp.swift */,
+				B259A98CC08E0539D0AE2318 /* ContentView.swift */,
+				43E2373809CEC65788782C55 /* Info.plist */,
+				FFDF4FBF0206027AF783A260 /* FaceMark */,
+				BCBA81BB2BAD29728D33FDB1 /* Furrow */,
+				68724ED26F076D9702E825F4 /* Stichos */,
+				579B77218A06A469F22D4A6C /* Turn */,
+				B2191947F91FC2842ED5A992 /* Work */,
+				DC011017CFA4B577610BEB0A /* YawMark */,
+			);
+			path = Boustrophedon;
+			sourceTree = "<group>";
+		};
+		FFDF4FBF0206027AF783A260 /* FaceMark */ = {
+			isa = PBXGroup;
+			children = (
+				B34B7795010D1AA7291D8A0E /* FaceMark.swift */,
+			);
+			path = FaceMark;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A7B8012437A98A9C16C6ABA2 /* Boustrophedon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 79543ECE22616EA8FF92E816 /* Build configuration list for PBXNativeTarget "Boustrophedon" */;
+			buildPhases = (
+				69B5F841CC7FC114CEC3AEC2 /* Sources */,
+				6F67C95AC66B0BBC0CAD7E13 /* Resources */,
+				BB4A5B13BCBBC1DB46DBBF20 /* Frameworks */,
+				494E7F69A34B19D2B46FB212 /* Embed Foundation Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0B957A169B5DCA384F8A7141 /* PBXTargetDependency */,
+			);
+			name = Boustrophedon;
+			packageProductDependencies = (
+				E57DE45F3542407009729285 /* Alamofire */,
+				1F5E91582252AD055263BC0D /* OneSignalFramework */,
+				A149AA0BE65C7040BB8D365F /* OneSignalInAppMessages */,
+			);
+			productName = Boustrophedon;
+			productReference = 8725FC32397D5C3ECB5986CD /* Boustrophedon.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CA611E3EEC6D3063913969FE /* BoustrophedonTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DE6B28941F5BD63BF17F5F64 /* Build configuration list for PBXNativeTarget "BoustrophedonTests" */;
+			buildPhases = (
+				CEF3F903256F7E9B0F1A848E /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				3C42F59BB3116734993F5FF8 /* PBXTargetDependency */,
+			);
+			name = BoustrophedonTests;
+			packageProductDependencies = (
+			);
+			productName = BoustrophedonTests;
+			productReference = D48EA6DBA60A98E77DAC2E6A /* BoustrophedonTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E653C4B79956E8D98C4D4F05 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 78D723E5364E737D729BA1AB /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				DD85FCD451B4F74529722846 /* Sources */,
+				3564B18D7155F3D9EEA0004C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			packageProductDependencies = (
+				F370F429BA72A731D0EE515C /* OneSignalExtension */,
+			);
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 4A0EF20627D327808EDB334E /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		223FD8277F2AA3187A4C2EF4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					A7B8012437A98A9C16C6ABA2 = {
+						ProvisioningStyle = Automatic;
+					};
+					CA611E3EEC6D3063913969FE = {
+						ProvisioningStyle = Automatic;
+					};
+					E653C4B79956E8D98C4D4F05 = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 201E0B652E14DD2340293296 /* Build configuration list for PBXProject "Boustrophedon" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 7F8B8D26FA448A88F5475059;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E405B390B13F3A00A45EC609 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				3C3BE6DE56FB84D04D20E970 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 70E695ACD63C11AA96E0159F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A7B8012437A98A9C16C6ABA2 /* Boustrophedon */,
+				CA611E3EEC6D3063913969FE /* BoustrophedonTests */,
+				E653C4B79956E8D98C4D4F05 /* OneSignalNotificationServiceExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6F67C95AC66B0BBC0CAD7E13 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				900268F4699CB1163994CBD0 /* Assets.xcassets in Resources */,
+				D9404F95A98A353BBECD61CD /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		69B5F841CC7FC114CEC3AEC2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F9843C938350F0A605AFCE71 /* APIConfig.swift in Sources */,
+				7802FBEBB653C13E2A68A928 /* AppDelegate.swift in Sources */,
+				117A5D7CA4210550E08A0D1A /* Boustrophedon.swift in Sources */,
+				9D194DE33362783AC90FA192 /* BoustrophedonApp.swift in Sources */,
+				76BA153A8348DDB28E1B8F42 /* CatalogClient.swift in Sources */,
+				0AD9EDFCD37772061ACFA83A /* CatalogSearch.swift in Sources */,
+				00A13F6B2FBE328768E37D9E /* ContentView.swift in Sources */,
+				835A38F05FF8FA6B970E415B /* DayKey.swift in Sources */,
+				477EA472B292C327F365D4AA /* ExploreView.swift in Sources */,
+				1BE6430DEB4D5EB527686A44 /* FaceButtonStyle.swift in Sources */,
+				892753D587D1416397501E4B /* FaceMark.swift in Sources */,
+				2A569611C5CE2FE47021D5AF /* Furrow.swift in Sources */,
+				77769658CB153C1013718452 /* FurrowDocument.swift in Sources */,
+				AD4CBC55EA0C6E5E49ED2D4E /* FurrowField.swift in Sources */,
+				91B702EF9BB89FE82DD08791 /* FurrowIntents.swift in Sources */,
+				C30BF1202FE608609C3A55A7 /* FurrowLinks.swift in Sources */,
+				ED8CABCFD73B7A58121851DF /* FurrowStore.swift in Sources */,
+				E4D96159185954DA07E61AC1 /* FurrowTray.swift in Sources */,
+				8034294D5FF3D1B3CB7A7246 /* FurrowVault.swift in Sources */,
+				75D99832A730F3CBC6725D84 /* GalleryShelf.swift in Sources */,
+				0C195A3488DBC933FEC4A26E /* OnboardingView.swift in Sources */,
+				6D141AD4B918931AF078BF35 /* OxFigures.swift in Sources */,
+				1432E4068C69E7E4319A1B9C /* OxMotion.swift in Sources */,
+				1AFABBA8321FE980C4F44BCC /* OxPalette.swift in Sources */,
+				61DE71D252A50B1CE002122C /* OxRadius.swift in Sources */,
+				973332B2DA1248EDECD1EF3E /* OxSpace.swift in Sources */,
+				D146D1353ABD6A4BD3931947 /* OxType.swift in Sources */,
+				D47E78909580C7AB6217055A /* QuietPage.swift in Sources */,
+				C7F82D7996B923A6D277322D /* QuizView.swift in Sources */,
+				EC4F7C88F76B90D4B984B742 /* ReviewScreenKey.swift in Sources */,
+				5BE8580481E1FF1AF9690514 /* SavedView.swift in Sources */,
+				7C0860944DC304B4F693A272 /* SettingsView.swift in Sources */,
+				C08DD287F6585ACD9EF99827 /* Stichos.swift in Sources */,
+				F8779DFD3254BF746EDE61B7 /* Turn.swift in Sources */,
+				2DA6832349FD5BF8A95A0A21 /* Work.swift in Sources */,
+				3490B85927A1753D547E5D29 /* YawMark.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CEF3F903256F7E9B0F1A848E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A8B693FA47E11A4C1CC18F42 /* BoustrophedonTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD85FCD451B4F74529722846 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				55A516D0FFC83152BB455F2B /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0B957A169B5DCA384F8A7141 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E653C4B79956E8D98C4D4F05 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 0F6E74DFFC72651423EB1088 /* PBXContainerItemProxy */;
+		};
+		3C42F59BB3116734993F5FF8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A7B8012437A98A9C16C6ABA2 /* Boustrophedon */;
+			targetProxy = C49785600CCF7AED3DC7DF41 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		068D221851F17F1E31760243 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Support/Boustrophedon.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Support/Boustrophedon-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Boustrophedon;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app does not use the camera.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow;
+				PRODUCT_NAME = Boustrophedon;
+				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		2AF728CD3C5D04563671E009 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow.tests;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Boustrophedon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Boustrophedon";
+			};
+			name = Debug;
+		};
+		406774AF3998A6F525C96CC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Support/Boustrophedon.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Support/Boustrophedon-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Boustrophedon;
+				INFOPLIST_KEY_ITSAppUsesNonExemptEncryption = NO;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
+				INFOPLIST_KEY_NSCameraUsageDescription = "This app does not use the camera.";
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow;
+				PRODUCT_NAME = Boustrophedon;
+				SDKROOT = iphoneos;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		91C61D3B999917FE5EF09A0D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Support/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Support/OneSignalNotificationServiceExtension-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = OneSignalNotificationServiceExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		C23D8178EB5341188023BFB3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Support/OneSignalNotificationServiceExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Support/OneSignalNotificationServiceExtension-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = OneSignalNotificationServiceExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_STRICT_CONCURRENCY = minimal;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DC0885AB65E991BAFE43C899 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+			};
+			name = Release;
+		};
+		E8590DE13ED2B20845D98B64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow.tests;
+				SDKROOT = iphoneos;
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Boustrophedon.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Boustrophedon";
+			};
+			name = Release;
+		};
+		FD17A2DCAAF7BA955A59C0A9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_STRICT_CONCURRENCY = complete;
+				SWIFT_VERSION = 6.2;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		201E0B652E14DD2340293296 /* Build configuration list for PBXProject "Boustrophedon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD17A2DCAAF7BA955A59C0A9 /* Debug */,
+				DC0885AB65E991BAFE43C899 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		78D723E5364E737D729BA1AB /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C23D8178EB5341188023BFB3 /* Debug */,
+				91C61D3B999917FE5EF09A0D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		79543ECE22616EA8FF92E816 /* Build configuration list for PBXNativeTarget "Boustrophedon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				068D221851F17F1E31760243 /* Debug */,
+				406774AF3998A6F525C96CC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		DE6B28941F5BD63BF17F5F64 /* Build configuration list for PBXNativeTarget "BoustrophedonTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2AF728CD3C5D04563671E009 /* Debug */,
+				E8590DE13ED2B20845D98B64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		3C3BE6DE56FB84D04D20E970 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.5.0;
+			};
+		};
+		E405B390B13F3A00A45EC609 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rg8tv2gc29-tech/Alamofire";
+			requirement = {
+				kind = revision;
+				revision = f4801b9f61363a74beb39cd962192b3956e34a92;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		1F5E91582252AD055263BC0D /* OneSignalFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C3BE6DE56FB84D04D20E970 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalFramework;
+		};
+		A149AA0BE65C7040BB8D365F /* OneSignalInAppMessages */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C3BE6DE56FB84D04D20E970 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalInAppMessages;
+		};
+		E57DE45F3542407009729285 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E405B390B13F3A00A45EC609 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		F370F429BA72A731D0EE515C /* OneSignalExtension */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 3C3BE6DE56FB84D04D20E970 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignalExtension;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 223FD8277F2AA3187A4C2EF4 /* Project object */;
+}

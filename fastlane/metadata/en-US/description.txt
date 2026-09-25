@@ -1,0 +1,16 @@
+Boustrophedon is a quiet practice app for facing National Gallery painting captions. You save a painting, lay its maker or title as a line where every other word runs backward, then tap those words until they read forward. It is for anyone who wants a short, on-device word puzzle tied to real gallery works.
+
+• Welcome walkthrough: "A line for captions.", "Face each backward word.", and "Keep the faced line."
+• Explore National Gallery paintings by "Maker or title", with a local shelf when search is idle
+• Save paintings into a personal crate
+• Lay a maker or title line with every other word letter-reversed
+• Face backward words by tapping them or using "Face"
+• Record yaws (misses) when a forward word is tapped
+• "New line" to start the next unfinished painting
+• "Retract" to undo the newest face or yaw
+• "Recently faced" and Saved lists of faced works and yaws, with "Faces filed", "Faces", and "Yaws" counts
+• Settings links to "The National Gallery, London", "Paintings", and "Contact us"
+• "Show the welcome again" and "Reset all data"
+• Light appearance, portrait layout
+
+Painting saves, faces, and yaws stay on this device. All of it stays on this device.

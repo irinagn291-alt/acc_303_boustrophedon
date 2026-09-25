@@ -1,0 +1,17 @@
+At cold launch the system may show the notifications permission alert. No custom usage-description string is set for notifications. The app does not ask for camera access; a camera usage string is present in the build settings: "This app does not use the camera."
+
+There is no login, no in-app purchase, no user-generated content, no account deletion flow, and no App Tracking Transparency prompt.
+
+Boustrophedon is a quiet practice app for facing National Gallery painting captions. You save a painting, lay its maker or title as a line where every other word runs backward, then tap those words until they read forward. It is for anyone who wants a short, on-device word puzzle tied to real gallery works.
+
+No credentials or demo account are needed. From a cold launch, after a short blank loading moment the native UI appears. If welcome has not been finished, complete the three steps with page dots (no swipe required): title "A line for captions." and button "Next"; title "Face each backward word." and button "Next"; title "Keep the faced line." and button "Continue". On the home screen titled "Face the words", if you see empty state "Crate level." / "Save a work, then face.", tap "Explore". In Explore, leave search empty to show the local shelf, then tap a row (for example "The Arnolfini Portrait") to save it to the crate. On home, if needed tap "New line" so a line is active and status can read "Turned", then tap a word chip marked "Backward" or tap "Face". Tapping a chip marked "Forward" records a miss and shows "That word already reads forward." Use "Retract" to undo the newest face or yaw. Open toolbar "Saved" for sections "Faced" and "Yaws", and "Settings" for sources and destructive "Reset all data" (confirm with "Reset all data" or cancel with "Keep").
+
+Painting saves, faces, and yaws stay on this device. Support is available via "Contact us" in Settings.
+
+Behaviour does not differ by region beyond the device’s number formatting for counts and the device calendar for yaw dates as YYYYMMDD.
+
+No licence or regulated-industry paperwork applies; this is an education practice app for gallery caption word lines with no medical, financial, or age-restricted services.
+
+The app is a personal log only and gives no recommendations. It does not present health, medical, or product-health information.
+
+The app does not scan barcodes or QR codes.
