@@ -1,17 +1,23 @@
-At cold launch the system may show the notifications permission alert. No custom usage-description string is set for notifications. The app does not ask for camera access; a camera usage string is present in the build settings: "This app does not use the camera."
+We appreciate the review. The build under review was retested on a clean device. Nothing we tried produced a crash, a dead end, an empty screen or a non-functioning feature.
 
-There is no login, no in-app purchase, no user-generated content, no account deletion flow, and no App Tracking Transparency prompt.
+Three behaviours are deliberate and can look like a stall on a fast pass. Please try these first.
 
-Boustrophedon is a quiet practice app for facing National Gallery painting captions. You save a painting, lay its maker or title as a line where every other word runs backward, then tap those words until they read forward. It is for anyone who wants a short, on-device word puzzle tied to real gallery works.
+1. Welcome will not dismiss until it is finished (no skip, no swipe; page dots are not tappable). Advance only with "Next" on "A line for captions.", "Next" on "Face each backward word.", then "Continue" on "Keep the faced line."
 
-No credentials or demo account are needed. From a cold launch, after a short blank loading moment the native UI appears. If welcome has not been finished, complete the three steps with page dots (no swipe required): title "A line for captions." and button "Next"; title "Face each backward word." and button "Next"; title "Keep the faced line." and button "Continue". On the home screen titled "Face the words", if you see empty state "Crate level." / "Save a work, then face.", tap "Explore". In Explore, leave search empty to show the local shelf, then tap a row (for example "The Arnolfini Portrait") to save it to the crate. On home, if needed tap "New line" so a line is active and status can read "Turned", then tap a word chip marked "Backward" or tap "Face". Tapping a chip marked "Forward" records a miss and shows "That word already reads forward." Use "Retract" to undo the newest face or yaw. Open toolbar "Saved" for sections "Faced" and "Yaws", and "Settings" for sources and destructive "Reset all data" (confirm with "Reset all data" or cancel with "Keep").
+2. "Face" stays disabled until the status is "Turned" and at least one "Backward" word remains. Word chips do nothing while the line is not "Turned". After the first save a line is usually already turned; otherwise tap "New line".
 
-Painting saves, faces, and yaws stay on this device. Support is available via "Contact us" in Settings.
+3. After every turnable saved painting is faced, status can read "Level" and home can return to "Crate level." / "Save a work, then face." Open "Explore" and save another work to continue.
 
-Behaviour does not differ by region beyond the device’s number formatting for counts and the device calendar for yaw dates as YYYYMMDD.
+Full review path. No account, no login:
+- Cold launch may sit blank briefly. The system may show the notifications permission alert. Finish welcome as in point 1, or home titled "Face the words" opens at once.
+- Toolbar "Saved" and "Settings" open those sheets; "Explore" opens Explore. Empty home is "Crate level." / "Save a work, then face." Tap "Explore", leave "Maker or title" empty, and tap a shelf row such as "The Arnolfini Portrait" to save and close. A painting already saved and focused can stay open and show "Already here".
+- Home shows the painting, title or "Lay a caption", maker, and a status such as "Turned, maker line". Tap a "Backward" chip or "Face" for "That word now reads forward." A "Forward" chip records a "Miss" and "That word already reads forward." "Retract" undoes the newest face or yaw. After one faced work, "Recently faced" and counts "Faces filed" and "Yaws".
+- A typed search may show "Looking", then "Search did not finish." with "Try again", or "Search stayed quiet." with "Show shelf".
+- "Saved" empty state: "Nothing faced yet." / "Lay a caption, then tap the backward words." with "Back to the line". Otherwise "Faced", "Yaws" ("Word N on YYYYMMDD"), totals "Faces" and "Yaws".
+- "Settings": "Sources" lists "The National Gallery, London", "Paintings" and "Contact us". "On this device" lists "Retract" and "Show the welcome again". "Reset all data" asks "Erase every painting and mark on this device?" Confirm "Reset all data" or cancel "Keep".
 
-No licence or regulated-industry paperwork applies; this is an education practice app for gallery caption word lines with no medical, financial, or age-restricted services.
+The Explore shelf lists eight National Gallery works; they enter the crate only when saved. First save of "The Arnolfini Portrait" by "Jan van Eyck" lays a "maker line". On a device the crate is not pre-filled. A first Simulator launch may already have those eight works, some faces and yaws, a live line, and welcome finished. Saves, the live line, faces and yaws persist and resume, including an unfinished "Turned" line. "Retract" undoes only the newest mark.
 
-The app is a personal log only and gives no recommendations. It does not present health, medical, or product-health information.
+Technical facts: no accounts, no in-app purchases, no ads, no shared user-generated content, no account deletion flow and no App Tracking Transparency prompt. Notifications are asked at cold launch via the system alert; there is no custom notifications usage string. Camera access is never requested; the camera usage string is "This app does not use the camera." Painting saves, faces and yaws stay on this device. Counts use the device's decimal format; yaw dates use the device calendar as YYYYMMDD. Portrait only on iPhone and iPad; minimum iOS 17.0.
 
-The app does not scan barcodes or QR codes.
+Please name the device, screen or step where the issue appeared and the exact wording on that screen. We will correct it and send a new build the same day.
