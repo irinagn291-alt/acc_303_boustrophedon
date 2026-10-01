@@ -1,10 +1,3 @@
-Version 1.0 introduces Boustrophedon, a quiet practice app for facing National Gallery painting captions.
-
-• Three-step welcome: "A line for captions.", "Face each backward word.", and "Keep the faced line."
-• Home screen "Face the words" with "Explore", "Saved", and "Settings"
-• Explore by "Maker or title", with a local shelf of National Gallery works
-• Save paintings to a crate; lay maker or title lines; face backward words; record yaws
-• "Face", "New line", and "Retract"
-• "Recently faced" strip; Saved sections "Faced" and "Yaws"
-• Settings sources, "Show the welcome again", and "Reset all data"
-• Light appearance, portrait layout; data stays on this device
+Version 1.8 keeps Boustrophedon polished and reliable.
+• Stability and performance improvements
+• Small refinements throughout the app
