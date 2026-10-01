@@ -22,6 +22,8 @@ targets:
     platform: iOS
     sources:
     - path: Boustrophedon
+      excludes:
+      - Info.plist
     resources:
     - path: PrivacyInfo.xcprivacy
     dependencies:
@@ -55,14 +57,6 @@ targets:
         CODE_SIGN_STYLE: Automatic
         INFOPLIST_FILE: Support/Boustrophedon-Info.plist
         CODE_SIGN_ENTITLEMENTS: Support/Boustrophedon.entitlements
-    info:
-      path: Boustrophedon/Info.plist
-      properties:
-        CFBundleURLTypes:
-        - CFBundleTypeRole: Editor
-          CFBundleURLName: com.boustrophedon.furrow
-          CFBundleURLSchemes:
-          - boustrophedon
   BoustrophedonTests:
     type: bundle.unit-test
     platform: iOS
@@ -90,7 +84,7 @@ targets:
       product: OneSignalExtension
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.boustrophedon.furrow.OneSignalNotificationServiceExtension
+        PRODUCT_BUNDLE_IDENTIFIER: com.boustrophedon.furrow.onesignal
         PRODUCT_NAME: OneSignalNotificationServiceExtension
         GENERATE_INFOPLIST_FILE: 'YES'
         INFOPLIST_FILE: Support/OneSignalNotificationServiceExtension-Info.plist
