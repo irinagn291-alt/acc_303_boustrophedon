@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.com.boustrophedon.furrow.onesignal</string>
+		<string>group.com.boustrophedon.furrow.onesignal.n99</string>
 	</array>
 	<key>aps-environment</key>
 	<string>development</string>

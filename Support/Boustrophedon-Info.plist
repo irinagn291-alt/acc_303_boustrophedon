@@ -16,7 +16,7 @@
 		</dict>
 	</array>
 	<key>OneSignal_app_groups_key</key>
-	<string>group.com.boustrophedon.furrow.onesignal</string>
+	<string>group.com.boustrophedon.furrow.onesignal.n99</string>
 	<key>UIBackgroundModes</key>
 	<array>
 		<string>remote-notification</string>
