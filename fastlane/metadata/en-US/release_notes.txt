@@ -1,3 +1,3 @@
-Version 2.0 keeps Boustrophedon polished and reliable.
+Version 2.1 keeps Boustrophedon polished and reliable.
 • Stability and performance improvements
 • Small refinements throughout the app
