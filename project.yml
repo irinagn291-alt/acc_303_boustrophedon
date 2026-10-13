@@ -2,7 +2,7 @@ name: Boustrophedon
 packages:
   Alamofire:
     url: https://github.com/rg8tv2gc29-tech/Alamofire
-    revision: f4801b9f61363a74beb39cd962192b3956e34a92
+    revision: 3ea8e93ec37a3ae5f255afb529ef20f438dd1903
   OneSignal:
     url: https://github.com/OneSignal/OneSignal-XCFramework
     from: 5.5.0
