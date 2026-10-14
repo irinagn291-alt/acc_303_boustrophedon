@@ -2,11 +2,11 @@ import SwiftUI
 
 /// Role: Furrow. One colour accessor. Views use these names; the catalog holds the same hex.
 enum OxPalette {
-    static let background = catalog("background", "#FAF7F5")
-    static let surface = catalog("surface", "#FEFEFD")
-    static let ink = catalog("ink", "#392818")
-    static let accent = catalog("accent", "#CC6D19")
-    static let muted = catalog("muted", "#816C5A")
+    static let background = catalog("background", "#472414")
+    static let surface = catalog("surface", "#6B4230")
+    static let ink = catalog("ink", "#FFF6FC")
+    static let accent = catalog("accent", "#FF6F2E")
+    static let muted = catalog("muted", "#DBB19E")
 
     private static func catalog(_ name: String, _ token: String) -> Color {
         Color(name, bundle: token.isEmpty ? nil : .main)
