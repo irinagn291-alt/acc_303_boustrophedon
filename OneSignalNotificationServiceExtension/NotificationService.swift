@@ -1,6 +1,7 @@
 import UserNotifications
 import OneSignalExtension
 
+// Forwards alerts for com.boustrophedon.furrow. The host app owns the crate.
 class NotificationService: UNNotificationServiceExtension {
     var contentHandler: ((UNNotificationContent) -> Void)?
     var receivedRequest: UNNotificationRequest!

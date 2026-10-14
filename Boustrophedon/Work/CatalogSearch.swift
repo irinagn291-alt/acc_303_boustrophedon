@@ -27,7 +27,7 @@ final class CatalogSearch {
         let trimmed = text.trimmingCharacters(in: .whitespacesAndNewlines)
         if trimmed.isEmpty {
             isSearching = false
-            rows = cache.isEmpty ? GalleryShelf.matching(query: "", daykey: DayKey.current()) : cache
+            rows = Self.mergedShelf(cache: cache)
             return
         }
         task = Task { [weak self] in
@@ -63,5 +63,13 @@ final class CatalogSearch {
         }
         spinnerTask?.cancel()
         isSearching = false
+    }
+
+    static func mergedShelf(cache: [Work]) -> [Work] {
+        var rows = GalleryShelf.matching(query: "", daykey: DayKey.current())
+        for item in cache where rows.contains(where: { $0.id == item.id }) == false {
+            rows.append(item)
+        }
+        return rows
     }
 }

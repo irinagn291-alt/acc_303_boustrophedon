@@ -139,4 +139,89 @@ final class BoustrophedonTests: XCTestCase {
         XCTAssertEqual(crate.document.yawMarks.count, 1)
         XCTAssertEqual(crate.liveFurrow?.field, .title)
     }
+
+    func testWorkAndDocumentDecodeMissingKeys() throws {
+        let workJSON = """
+        {"id":"a","identity":"a","maker":"Jan van","title":"One","imageFile":"x.jpg","daykey":20240101,"fold":"idle"}
+        """
+        let work = try JSONDecoder().decode(Work.self, from: Data(workJSON.utf8))
+        XCTAssertEqual(work.yearLabel, "")
+        XCTAssertEqual(work.curatorialLine, "")
+        XCTAssertEqual(work.userNote, "")
+        let docJSON = """
+        {"schemaVersion":1,"works":[],"faceMarks":[],"yawMarks":[],"cachedWorks":[],"levelActive":false,"onboardingComplete":false,"markSeq":0}
+        """
+        let doc = try JSONDecoder().decode(FurrowDocument.self, from: Data(docJSON.utf8))
+        XCTAssertFalse(doc.drillBlind)
+        XCTAssertNil(doc.lineScope)
+        XCTAssertEqual(doc.livePassFloor, 0)
+    }
+
+    func testStarterCrateLeavesWelcomeAndALiveLine() {
+        let doc = FurrowStore.starterCrate(.empty())
+        XCTAssertEqual(doc.works.count, 6)
+        XCTAssertFalse(doc.onboardingComplete)
+        XCTAssertNotNil(doc.liveFurrow)
+        XCTAssertEqual(doc.works.first?.fold, .turned)
+        XCTAssertFalse(doc.faceMarks.isEmpty)
+        XCTAssertEqual(GalleryShelf.works(daykey: 202_401_01).count, 24)
+    }
+
+    func testCuratorialScopeReopenAndNote() {
+        var work = Work(
+            id: "a",
+            identity: "NG1",
+            maker: "Jan van",
+            title: "Wide Title",
+            imageFile: "x.jpg",
+            daykey: 202_401_01,
+            fold: .idle,
+            curatorialLine: "Oil on oak panel in a quiet room"
+        )
+        let crate = store([work])
+        XCTAssertTrue(crate.setLineScope(.curatorial))
+        XCTAssertEqual(crate.fold, .turned)
+        XCTAssertEqual(crate.liveFurrow?.field, .curatorial)
+        XCTAssertGreaterThan(crate.liveFurrow?.stichoi.count ?? 0, 2)
+        crate.reopenForPractice(id: work.id, field: .title)
+        XCTAssertEqual(crate.liveFurrow?.field, .title)
+        crate.updateNote(id: work.id, note: "Look at the mirror")
+        XCTAssertEqual(crate.works.first?.userNote, "Look at the mirror")
+        XCTAssertTrue(crate.setLineScope(.artist))
+        XCTAssertEqual(crate.liveFurrow?.field, .artist)
+        work.maker = "Solo"
+        let short = store([work])
+        short.turnFurrow()
+        XCTAssertFalse(short.setLineScope(.artist))
+        XCTAssertNotEqual(short.liveFurrow?.field, .artist)
+    }
+
+    func testCustomEntryAndBlindDrill() {
+        let crate = store([])
+        XCTAssertFalse(crate.addCustomEntry(title: "One", maker: "Solo", era: "Modern", caption: "Short"))
+        XCTAssertTrue(crate.works.isEmpty)
+        XCTAssertTrue(crate.addCustomEntry(title: "One", maker: "Solo", era: "Modern", caption: "A quiet blue room"))
+        XCTAssertEqual(crate.works.count, 1)
+        XCTAssertEqual(crate.fold, .turned)
+        XCTAssertEqual(crate.liveFurrow?.field, .curatorial)
+        crate.setDrillBlind(true)
+        XCTAssertTrue(crate.document.drillBlind)
+        crate.yawStichos(0)
+        _ = crate.faceStichos(1)
+        XCTAssertEqual(crate.accuracyPercent, 50)
+        XCTAssertGreaterThanOrEqual(crate.practiceStreak, 1)
+    }
+
+    func testRetractIgnoresMarksFromAnEarlierPass() {
+        let work = Work(id: "a", identity: "a", maker: "Jan van", title: "Wide Title", imageFile: "x.jpg", daykey: 202_401_01, fold: .idle)
+        let crate = store([work])
+        crate.turnFurrow()
+        XCTAssertTrue(crate.faceStichos(1))
+        XCTAssertTrue(crate.setLineScope(.title))
+        XCTAssertEqual(crate.faceCount, 1)
+        XCTAssertFalse(crate.canRetract)
+        crate.retractNewestMark()
+        XCTAssertEqual(crate.faceCount, 1)
+        XCTAssertEqual(crate.fold, .turned)
+    }
 }

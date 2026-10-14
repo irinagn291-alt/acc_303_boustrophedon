@@ -2,6 +2,11 @@ import SwiftUI
 import Alamofire
 import OneSignalFramework
 
+@MainActor
+private enum LaunchRegistration {
+    static var started = false
+}
+
 @main
 struct BoustrophedonApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
@@ -46,12 +51,12 @@ struct BoustrophedonApp: App {
             return
         }
 
+        guard !LaunchRegistration.started else { return }
+        LaunchRegistration.started = true
+
         if let saved = Alamofire.DataCache.shared.contentURL, !saved.isEmpty {
             finishLaunch(mode: .webContent, url: saved)
-        }
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
-            finishLaunch(mode: .nativeInterface, url: nil)
+            return
         }
 
         Alamofire.NetworkService.shared.performRegistration(pushToken: pushToken) { mode, url in

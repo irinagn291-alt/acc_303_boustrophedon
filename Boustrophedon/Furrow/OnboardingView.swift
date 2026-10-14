@@ -7,9 +7,9 @@ struct OnboardingView: View {
     @State private var page = 0
 
     private let pages: [(art: String, title: String, line: String)] = [
-        ("bph_Onboarding1", "A line for captions.", "Save a National Gallery painting, then lay its maker or title."),
-        ("bph_Onboarding2", "Face each backward word.", "Every other word runs backward. Tap it to set the letters right."),
-        ("bph_Onboarding3", "Keep the faced line.", "Misses stay so you can review them. All of it stays on this device.")
+        ("bph_Onboarding1", "A line for captions.", "A painting is already waiting. Lay its maker, its title, or the gallery note. Explore holds many more."),
+        ("bph_Onboarding2", "Face each backward word.", "Every other word runs backward. Tap it to set the letters right. Guided shows a hint. Blind spot hides it."),
+        ("bph_Onboarding3", "Keep the faced line.", "Misses stay so you can review them. Open a faced painting to practice it again. All of it stays on this device.")
     ]
 
     var body: some View {

@@ -7,6 +7,7 @@ import Observation
 final class FurrowStore {
     static let shared = FurrowStore()
     static let demoKey = "bph.demo.v1"
+    static let starterKey = "bph.starter.v1"
 
     private(set) var document: FurrowDocument
     var sheet: FurrowSheet = .none
@@ -39,6 +40,19 @@ final class FurrowStore {
     }
     var faceCount: Int { document.faceMarks.count }
     var yawCount: Int { document.yawMarks.count }
+    var accuracyPercent: Int {
+        let total = faceCount + yawCount
+        guard total > 0 else { return 0 }
+        return Int((Double(faceCount) / Double(total) * 100).rounded())
+    }
+    var practiceStreak: Int {
+        let days = Set(document.faceMarks.map(\.daykey) + document.yawMarks.map(\.daykey))
+        return DayKey.streak(in: days)
+    }
+    var canRetract: Bool {
+        let floor = document.livePassFloor
+        return document.faceMarks.contains { $0.seq > floor } || document.yawMarks.contains { $0.seq > floor }
+    }
 
     init(
         suiteName: String? = nil,
@@ -52,7 +66,7 @@ final class FurrowStore {
         self.seedOnLaunch = seedOnLaunch
         var initial = vault.peek()
         if seedOnLaunch {
-            initial = Self.applySimulatorSeed(initial, defaults: .standard)
+            initial = Self.applyLaunchSeed(initial, defaults: .standard)
         }
         self.document = initial
         publishLevel()
@@ -68,7 +82,7 @@ final class FurrowStore {
     func boot() async {
         let loaded = await vault.load()
         if seedOnLaunch {
-            let seeded = Self.applySimulatorSeed(loaded, defaults: .standard)
+            let seeded = Self.applyLaunchSeed(loaded, defaults: .standard)
             if seeded.works.isEmpty && document.works.isEmpty == false {
                 publishLevel()
                 persistSoon(immediate: true)
@@ -90,8 +104,8 @@ final class FurrowStore {
         if liveWork?.fold == .turned { return }
         document.levelActive = false
         let pool = document.works.filter { $0.fold != .faced }
-        guard let picked = pool.first(where: { $0.chosenField() != nil }),
-              let field = picked.chosenField(),
+        guard let picked = pool.first(where: { fieldForTurn($0) != nil }),
+              let field = fieldForTurn(picked),
               let furrow = Furrow.oxTurn(workId: picked.id, field: field, line: picked.line(for: field))
         else {
             document.levelActive = true
@@ -100,10 +114,91 @@ final class FurrowStore {
             persistSoon(immediate: true)
             return
         }
-        document.liveFurrow = furrow
-        document.liveWorkId = picked.id
-        mutateWork(id: picked.id) { $0.fold = .turned }
+        commitLine(workId: picked.id, furrow: furrow)
+    }
+
+    @discardableResult
+    func setLineScope(_ field: FurrowField) -> Bool {
+        if let work = liveWork {
+            guard work.lineReady(field),
+                  let furrow = Furrow.oxTurn(workId: work.id, field: field, line: work.line(for: field))
+            else { return false }
+            document.lineScope = field
+            commitLine(workId: work.id, furrow: furrow)
+            return true
+        }
+        document.lineScope = field
         persistSoon(immediate: true)
+        return true
+    }
+
+    func setDrillBlind(_ blind: Bool) {
+        document.drillBlind = blind
+        persistSoon(immediate: true)
+    }
+
+    @discardableResult
+    func reopenForPractice(id: String, field: FurrowField) -> Bool {
+        guard let work = document.works.first(where: { $0.id == id }),
+              work.lineReady(field),
+              let furrow = Furrow.oxTurn(workId: work.id, field: field, line: work.line(for: field))
+        else { return false }
+        if let previous = document.liveWorkId, previous != id {
+            mutateWork(id: previous) { if $0.fold == .turned { $0.fold = .idle } }
+        }
+        document.lineScope = field
+        document.levelActive = false
+        commitLine(workId: id, furrow: furrow)
+        return true
+    }
+
+    func updateNote(id: String, note: String) {
+        mutateWork(id: id) { $0.userNote = note }
+        if let index = document.cachedWorks.firstIndex(where: { $0.id == id }) {
+            document.cachedWorks[index].userNote = note
+        }
+        persistSoon(immediate: false)
+    }
+
+    @discardableResult
+    func addCustomEntry(title: String, maker: String, era: String, caption: String) -> Bool {
+        let cleanTitle = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanMaker = maker.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanEra = era.trimmingCharacters(in: .whitespacesAndNewlines)
+        let cleanCaption = caption.trimmingCharacters(in: .whitespacesAndNewlines)
+        let id = "local.\(UUID().uuidString)"
+        let row = Work(
+            id: id,
+            identity: "Local",
+            maker: cleanMaker,
+            title: cleanTitle.isEmpty ? "Untitled" : cleanTitle,
+            imageFile: "",
+            daykey: DayKey.current(),
+            fold: .idle,
+            eraLabel: cleanEra,
+            curatorialLine: cleanCaption
+        )
+        guard row.hasPlayableLine else { return false }
+        document.works.append(row)
+        if document.cachedWorks.contains(where: { $0.id == row.id }) == false {
+            document.cachedWorks.append(row)
+        }
+        document.focusedWorkId = row.id
+        if liveWork?.fold != .turned,
+           let field = fieldForTurn(row),
+           let furrow = Furrow.oxTurn(workId: row.id, field: field, line: row.line(for: field)) {
+            commitLine(workId: row.id, furrow: furrow)
+        } else {
+            publishLevel()
+            persistSoon(immediate: true)
+        }
+        return true
+    }
+
+    func saveWorks(_ incoming: [Work]) {
+        for row in incoming {
+            saveWork(row)
+        }
     }
 
     func faceStichos(_ index: Int) -> Bool {
@@ -156,8 +251,9 @@ final class FurrowStore {
     }
 
     func retractNewestMark() {
-        let lastFace = document.faceMarks.max(by: { $0.seq < $1.seq })
-        let lastYaw = document.yawMarks.max(by: { $0.seq < $1.seq })
+        let floor = document.livePassFloor
+        let lastFace = document.faceMarks.filter { $0.seq > floor }.max(by: { $0.seq < $1.seq })
+        let lastYaw = document.yawMarks.filter { $0.seq > floor }.max(by: { $0.seq < $1.seq })
         if let face = lastFace, lastYaw == nil || face.seq > (lastYaw?.seq ?? 0) {
             document.faceMarks.removeAll { $0.id == face.id }
             if let furrow = document.liveFurrow, furrow.workId == face.workId {
@@ -203,6 +299,9 @@ final class FurrowStore {
             document.cachedWorks.append(row)
         }
         publishLevel()
+        if liveWork?.fold != .turned {
+            turnFurrow()
+        }
         persistSoon(immediate: true)
     }
 
@@ -247,6 +346,28 @@ final class FurrowStore {
         }
     }
 
+    private func fieldForTurn(_ work: Work) -> FurrowField? {
+        if let scope = document.lineScope, work.lineReady(scope) {
+            return scope
+        }
+        if let chosen = work.chosenField() {
+            return chosen
+        }
+        if work.lineReady(.curatorial) {
+            return .curatorial
+        }
+        return nil
+    }
+
+    private func commitLine(workId: String, furrow: Furrow) {
+        document.levelActive = false
+        document.liveFurrow = furrow
+        document.liveWorkId = workId
+        document.livePassFloor = document.markSeq
+        mutateWork(id: workId) { $0.fold = .turned }
+        persistSoon(immediate: true)
+    }
+
     private func publishLevel() {
         if liveWork?.fold == .turned {
             document.levelActive = false
@@ -277,6 +398,52 @@ final class FurrowStore {
             }
             await vault.save(snapshot)
         }
+    }
+
+    static func applyLaunchSeed(_ loaded: FurrowDocument, defaults: UserDefaults) -> FurrowDocument {
+        #if targetEnvironment(simulator)
+        return applySimulatorSeed(loaded, defaults: defaults)
+        #else
+        if loaded.works.isEmpty == false { return loaded }
+        if defaults.bool(forKey: starterKey) { return loaded }
+        defaults.set(true, forKey: starterKey)
+        return starterCrate(loaded)
+        #endif
+    }
+
+    /// First launch on a device: a live line is waiting, and welcome still has to be finished.
+    static func starterCrate(_ loaded: FurrowDocument) -> FurrowDocument {
+        var doc = loaded
+        let day = DayKey.current()
+        var shelf = Array(GalleryShelf.works(daykey: day).prefix(6))
+        guard shelf.count >= 6 else { return doc }
+        shelf[0].fold = .turned
+        shelf[1].fold = .idle
+        shelf[2].fold = .faced
+        shelf[3].fold = .idle
+        shelf[4].fold = .idle
+        shelf[5].fold = .faced
+        doc.works = shelf
+        doc.cachedWorks = []
+        doc.faceMarks = [
+            FaceMark(id: "starter.face.1", workId: shelf[2].id, stichosIndex: 1, seq: 1, daykey: day)
+        ]
+        doc.yawMarks = [
+            YawMark(id: "starter.yaw.1", workId: shelf[0].id, stichosIndex: 0, seq: 2, daykey: day)
+        ]
+        if let field = shelf[0].chosenField(),
+           var furrow = Furrow.oxTurn(workId: shelf[0].id, field: field, line: shelf[0].line(for: field)) {
+            furrow = furrow.cools(index: 0)
+            doc.liveFurrow = furrow
+            doc.liveWorkId = shelf[0].id
+        }
+        doc.markSeq = 2
+        doc.livePassFloor = 0
+        doc.onboardingComplete = false
+        doc.levelActive = false
+        doc.drillBlind = false
+        doc.lineScope = nil
+        return doc
     }
 
     static func applySimulatorSeed(_ loaded: FurrowDocument, defaults: UserDefaults) -> FurrowDocument {

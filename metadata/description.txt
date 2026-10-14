@@ -1,16 +1,19 @@
-Boustrophedon is a quiet practice app for facing National Gallery painting captions. You save a painting, lay its maker or title as a line where every other word runs backward, then tap those words until they read forward. It is for anyone who wants a short, on-device word puzzle tied to real gallery works.
+Boustrophedon is a quiet practice app for facing National Gallery painting captions. A painting is ready when you finish the welcome. You choose the maker, the title, or the gallery note, then tap the words that run backward until the line reads forward. Guided shows a hint. Blind spot hides it. It is for anyone who wants a longer, on-device word practice tied to real gallery works.
 
 • Welcome walkthrough: "A line for captions.", "Face each backward word.", and "Keep the faced line."
-• Explore National Gallery paintings by "Maker or title", with a local shelf when search is idle
-• Save paintings into a personal crate
-• Lay a maker or title line with every other word letter-reversed
-• Face backward words by tapping them or using "Face"
-• Record yaws (misses) when a forward word is tapped
-• "New line" to start the next unfinished painting
-• "Retract" to undo the newest face or yaw
-• "Recently faced" and Saved lists of faced works and yaws, with "Faces filed", "Faces", and "Yaws" counts
+• A starter crate so the first line is ready on a new device
+• Explore National Gallery paintings by "Maker or title", with era groups "All", "Renaissance", "Baroque", "Romantic", and "Modern"
+• "Save", "Save all", and "Practice" without leaving a painting half finished
+• "New study line" for a maker, title, and gallery note you type yourself
+• "Maker", "Title", and "Inscription" lines, with "Guided" or "Blind spot"
+• "Letters" to read the spelling on the line
+• Face backward words by tapping them, or use "Face" while Guided is on
+• Record misses when a forward word is tapped
+• "New line", "Retract", and "Practice again" when a painting is already faced
+• "About this painting" with year, room, era, inventory, gallery note, and "Your note"
+• "Recently faced", Saved mastery ("Accuracy", "Days in a row", "Paintings faced", "Words set right", "Faces", "Yaws"), and practice from a saved painting
 • Settings links to "The National Gallery, London", "Paintings", and "Contact us"
 • "Show the welcome again" and "Reset all data"
-• Light appearance, portrait layout
+• Light appearance, portrait layout, with the painting beside the line on iPad
 
-Painting saves, faces, and yaws stay on this device. All of it stays on this device.
+Painting saves, faces, yaws, and notes stay on this device. All of it stays on this device.
