@@ -1,1 +1,1 @@
-gallery,painting,caption,words,puzzle,practice,education,maker,title,crate,face,yaw
+checkers,gallery,painting,caption,memory,museum,art,spelling,reading,study,vocabulary,puzzle,notice

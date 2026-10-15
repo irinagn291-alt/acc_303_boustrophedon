@@ -286,16 +286,24 @@ struct OxStudyForm: View {
     var body: some View {
         NavigationStack {
             Form {
-                TextField("Title", text: $title)
-                TextField("Maker", text: $maker)
+                TextField("", text: $title, prompt: Text("Title").foregroundStyle(OxPalette.muted))
+                    .foregroundStyle(OxPalette.ink)
+                    .listRowBackground(OxPalette.surface)
+                TextField("", text: $maker, prompt: Text("Maker").foregroundStyle(OxPalette.muted))
+                    .foregroundStyle(OxPalette.ink)
+                    .listRowBackground(OxPalette.surface)
                 Picker("Era", selection: $era) {
                     Text("Renaissance").tag("Renaissance")
                     Text("Baroque").tag("Baroque")
                     Text("Romantic").tag("Romantic")
                     Text("Modern").tag("Modern")
                 }
-                TextField("Gallery note", text: $caption, axis: .vertical)
+                .foregroundStyle(OxPalette.ink)
+                .listRowBackground(OxPalette.surface)
+                TextField("", text: $caption, prompt: Text("Gallery note").foregroundStyle(OxPalette.muted), axis: .vertical)
                     .lineLimit(3...6)
+                    .foregroundStyle(OxPalette.ink)
+                    .listRowBackground(OxPalette.surface)
                 if fault.isEmpty == false {
                     Text(fault)
                         .font(OxType.caption)

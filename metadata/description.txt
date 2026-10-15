@@ -1,19 +1,25 @@
-Boustrophedon is a quiet practice app for facing National Gallery painting captions. A painting is ready when you finish the welcome. You choose the maker, the title, or the gallery note, then tap the words that run backward until the line reads forward. Guided shows a hint. Blind spot hides it. It is for anyone who wants a longer, on-device word practice tied to real gallery works.
+Boustrophedon is a daily reading practice for National Gallery captions, kept on this device.
 
-• Welcome walkthrough: "A line for captions.", "Face each backward word.", and "Keep the faced line."
-• A starter crate so the first line is ready on a new device
-• Explore National Gallery paintings by "Maker or title", with era groups "All", "Renaissance", "Baroque", "Romantic", and "Modern"
-• "Save", "Save all", and "Practice" without leaving a painting half finished
-• "New study line" for a maker, title, and gallery note you type yourself
-• "Maker", "Title", and "Inscription" lines, with "Guided" or "Blind spot"
-• "Letters" to read the spelling on the line
-• Face backward words by tapping them, or use "Face" while Guided is on
-• Record misses when a forward word is tapped
-• "New line", "Retract", and "Practice again" when a painting is already faced
-• "About this painting" with year, room, era, inventory, gallery note, and "Your note"
-• "Recently faced", Saved mastery ("Accuracy", "Days in a row", "Paintings faced", "Words set right", "Faces", "Yaws"), and practice from a saved painting
-• Settings links to "The National Gallery, London", "Paintings", and "Contact us"
-• "Show the welcome again" and "Reset all data"
-• Light appearance, portrait layout, with the painting beside the line on iPad
+Home opens on today. Five stops are already cut:
 
-Painting saves, faces, yaws, and notes stay on this device. All of it stays on this device.
+1. Bench spells a word you missed.
+2. Plough walks the caption the way an ox turns: left to right, then back from the right.
+3. Face taps every backward word until the line reads forward.
+4. Route opens the next painting on your visit list.
+5. Recall spells a word from your book.
+
+Finish all five and today is filed. Tomorrow is cut from what you missed, what is still on the route, and what you pinned.
+
+A miss does not disappear. That word is due again tomorrow. A clean face waits longer: one day, then two, four, eight, and sixteen. Due today is counted on the home card, so you can see what you still owe.
+
+The library on this device holds fifty National Gallery captions, grouped by era. Add any painting to today. Search still reaches the gallery, and the shelf remains when the search is quiet.
+
+On the open painting you can also:
+
+- Cover the line and write it from memory. Check marks the words you hit, missed, or added.
+- Write what you notice: the light, one thing you can point at, and a word that fits. The gallery caption stays out of that note.
+- Switch the same line to Face, Plough, Bench, or Cover. Guided shows which words run backward. Blind spot hides the hint.
+- Keep hangs, rooms with minutes, and a written pair of two paintings.
+- Play a game of checkers. Your pieces start at the bottom. The house answers. Jumps are required. Wins stay on this device.
+
+No account. No sign-in. Paintings, marks, notices, the route, and the checkers score stay on this device.

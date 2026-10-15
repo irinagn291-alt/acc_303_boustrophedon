@@ -8,20 +8,8 @@ struct ContentView: View {
 
     var body: some View {
         QuizView(store: store)
-            .sheet(isPresented: exploreBind) {
-                ExploreView(store: store)
-                    .presentationBackground(OxPalette.surface)
-                    .presentationCornerRadius(OxRadius.card)
-                    .modifier(SheetRise())
-            }
-            .sheet(isPresented: savedBind) {
-                SavedView(store: store)
-                    .presentationBackground(OxPalette.surface)
-                    .presentationCornerRadius(OxRadius.card)
-                    .modifier(SheetRise())
-            }
-            .sheet(isPresented: settingsBind) {
-                SettingsView(store: store)
+            .sheet(item: sheetItem) { item in
+                sheetBody(item)
                     .presentationBackground(OxPalette.surface)
                     .presentationCornerRadius(OxRadius.card)
                     .modifier(SheetRise())
@@ -40,6 +28,7 @@ struct ContentView: View {
                 if done { readReviewOnce() }
             }
             .onAppear {
+                OxChrome.apply()
                 if store.document.onboardingComplete {
                     readReviewOnce()
                 }
@@ -55,16 +44,41 @@ struct ContentView: View {
             )
     }
 
-    private var exploreBind: Binding<Bool> {
-        Binding(get: { store.sheet == .explore }, set: { if !$0 { store.present(.none) } })
+    private var sheetItem: Binding<FurrowSheet?> {
+        Binding(
+            get: { store.sheet == .none ? nil : store.sheet },
+            set: { store.present($0 ?? .none) }
+        )
     }
 
-    private var savedBind: Binding<Bool> {
-        Binding(get: { store.sheet == .saved }, set: { if !$0 { store.present(.none) } })
-    }
-
-    private var settingsBind: Binding<Bool> {
-        Binding(get: { store.sheet == .settings }, set: { if !$0 { store.present(.none) } })
+    @ViewBuilder
+    private func sheetBody(_ item: FurrowSheet) -> some View {
+        switch item {
+        case .none:
+            EmptyView()
+        case .explore:
+            ExploreView(store: store)
+        case .saved:
+            SavedView(store: store)
+        case .settings:
+            SettingsView(store: store)
+        case .lexicon:
+            LexiconView(store: store)
+        case .hangs:
+            HangsView(store: store)
+        case .ledger:
+            LedgerView(store: store)
+        case .rooms:
+            RoomsView(store: store)
+        case .pairs:
+            PairsView(store: store)
+        case .notices:
+            NoticesView(store: store)
+        case .checkers:
+            CheckersView(store: store)
+        case .library:
+            LibraryView(store: store)
+        }
     }
 
     private var onboardingBind: Binding<Bool> {

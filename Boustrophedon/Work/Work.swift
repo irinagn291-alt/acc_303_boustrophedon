@@ -14,6 +14,7 @@ struct Work: Codable, Equatable, Identifiable, Sendable {
     var eraLabel: String
     var curatorialLine: String
     var userNote: String
+    var studioLine: String
 
     init(
         id: String,
@@ -27,7 +28,8 @@ struct Work: Codable, Equatable, Identifiable, Sendable {
         roomLabel: String = "",
         eraLabel: String = "",
         curatorialLine: String = "",
-        userNote: String = ""
+        userNote: String = "",
+        studioLine: String = ""
     ) {
         self.id = id
         self.identity = identity
@@ -41,6 +43,7 @@ struct Work: Codable, Equatable, Identifiable, Sendable {
         self.eraLabel = eraLabel
         self.curatorialLine = curatorialLine
         self.userNote = userNote
+        self.studioLine = studioLine
     }
 
     func line(for field: FurrowField) -> String {
@@ -48,6 +51,7 @@ struct Work: Codable, Equatable, Identifiable, Sendable {
         case .artist: maker
         case .title: title
         case .curatorial: curatorialLine
+        case .studio: studioLine
         }
     }
 
@@ -56,7 +60,7 @@ struct Work: Codable, Equatable, Identifiable, Sendable {
     }
 
     var hasPlayableLine: Bool {
-        chosenField() != nil || lineReady(.curatorial)
+        chosenField() != nil || lineReady(.curatorial) || lineReady(.studio)
     }
 
     func chosenField() -> FurrowField? {
@@ -87,6 +91,7 @@ struct Work: Codable, Equatable, Identifiable, Sendable {
         case eraLabel
         case curatorialLine
         case userNote
+        case studioLine
     }
 
     init(from decoder: Decoder) throws {
@@ -103,6 +108,7 @@ struct Work: Codable, Equatable, Identifiable, Sendable {
         eraLabel = try box.decodeIfPresent(String.self, forKey: .eraLabel) ?? ""
         curatorialLine = try box.decodeIfPresent(String.self, forKey: .curatorialLine) ?? ""
         userNote = try box.decodeIfPresent(String.self, forKey: .userNote) ?? ""
+        studioLine = try box.decodeIfPresent(String.self, forKey: .studioLine) ?? ""
     }
 
     func encode(to encoder: Encoder) throws {
@@ -119,5 +125,6 @@ struct Work: Codable, Equatable, Identifiable, Sendable {
         try box.encode(eraLabel, forKey: .eraLabel)
         try box.encode(curatorialLine, forKey: .curatorialLine)
         try box.encode(userNote, forKey: .userNote)
+        try box.encode(studioLine, forKey: .studioLine)
     }
 }

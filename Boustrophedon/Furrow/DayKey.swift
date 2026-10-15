@@ -11,6 +11,21 @@ enum DayKey {
         return year * 10_000 + month * 100 + day
     }
 
+    static func adding(_ days: Int, to daykey: Int, calendar: Calendar = .current) -> Int? {
+        let year = daykey / 10_000
+        let month = (daykey / 100) % 100
+        let day = daykey % 100
+        var parts = DateComponents()
+        parts.year = year
+        parts.month = month
+        parts.day = day
+        guard let date = calendar.date(from: parts),
+              let shifted = calendar.date(byAdding: .day, value: days, to: date) else {
+            return nil
+        }
+        return current(shifted, calendar: calendar)
+    }
+
     static func previous(_ daykey: Int, calendar: Calendar = .current) -> Int? {
         let year = daykey / 10_000
         let month = (daykey / 100) % 100

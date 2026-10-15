@@ -25,13 +25,12 @@ struct QuizView: View {
                 ) {
                     store.present(.explore)
                 }
-            } else if store.turnableWorks.isEmpty {
-                settled
             } else {
                 furrow
             }
         }
         .background(OxPalette.background.ignoresSafeArea())
+        .onAppear { store.prepareToday() }
         .sensoryFeedback(.success, trigger: facePulse)
         .sheet(isPresented: $showLetters) {
             OxLetterSheet(
@@ -46,12 +45,17 @@ struct QuizView: View {
     }
 
     private var furrow: some View {
+        GeometryReader { geo in
         VStack(spacing: 0) {
             chrome
                 .padding(.horizontal, OxSpace.lg)
                 .padding(.top, OxSpace.sm)
                 .padding(.bottom, OxSpace.sm)
+                .frame(width: geo.size.width)
             if wide {
+                sessionHead
+                    .padding(.horizontal, OxSpace.lg)
+                    .padding(.bottom, OxSpace.sm)
                 HStack(alignment: .top, spacing: OxSpace.lg) {
                     ScrollView { paintingColumn }
                     ScrollView { playColumn }
@@ -61,52 +65,29 @@ struct QuizView: View {
             } else {
                 ScrollView {
                     VStack(alignment: .leading, spacing: OxSpace.md) {
+                        sessionHead
                         hero
                         caption
-                        stichosRail
+                        studioPlay
+                        toolPicker
                         noteLine
-                        verbs
                         scopeControls
+                        studioStrip
                         stat
                         facedRail
-                        OxDossierCard(store: store)
+                        NoticeCard(store: store)
                     }
                     .padding(.horizontal, OxSpace.lg)
                     .padding(.bottom, OxSpace.xl)
+                    .frame(width: geo.size.width, alignment: .leading)
                 }
+                .frame(width: geo.size.width)
             }
         }
+        .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
+        }
+        .clipped()
         .scrollDismissesKeyboard(.interactively)
-    }
-
-    private var settled: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: OxSpace.md) {
-                chrome
-                Image("bph_EmptyHome")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: OxSpace.lg * 7, maxHeight: OxSpace.lg * 7)
-                    .accessibilityHidden(true)
-                Text("Every saved painting is faced.")
-                    .font(OxType.display(typeSize))
-                    .foregroundStyle(OxPalette.ink)
-                    .lineLimit(2)
-                Text("Open Saved to practice one again, or Explore for another.")
-                    .font(OxType.body)
-                    .foregroundStyle(OxPalette.muted)
-                    .lineLimit(3)
-                Button("Practice again") { practiceAgain() }
-                    .buttonStyle(FaceButtonStyle())
-                    .disabled(store.facedWorks.isEmpty && store.works.isEmpty)
-                Button("Explore") { store.present(.explore) }
-                    .buttonStyle(FaceButtonStyle(prominent: false))
-            }
-            .padding(.horizontal, OxSpace.lg)
-            .padding(.bottom, OxSpace.xl)
-            .frame(maxWidth: wide ? OxSpace.band * 1.4 : .infinity, alignment: .leading)
-            .frame(maxWidth: .infinity)
-        }
     }
 
     private var paintingColumn: some View {
@@ -114,7 +95,7 @@ struct QuizView: View {
             hero
             caption
             facedRail
-            OxDossierCard(store: store)
+            NoticeCard(store: store)
         }
         .padding(.bottom, OxSpace.xl)
         .frame(maxWidth: .infinity, alignment: .leading)
@@ -122,10 +103,11 @@ struct QuizView: View {
 
     private var playColumn: some View {
         VStack(alignment: .leading, spacing: OxSpace.md) {
-            stichosRail
+            studioPlay
+            toolPicker
             noteLine
-            verbs
             scopeControls
+            studioStrip
             stat
         }
         .padding(.bottom, OxSpace.xl)
@@ -150,12 +132,13 @@ struct QuizView: View {
 
     private var chrome: some View {
         HStack(alignment: .center, spacing: OxSpace.sm) {
-            Text("Face the words")
+            Text("Today")
                 .font(OxType.display(typeSize))
                 .foregroundStyle(OxPalette.ink)
                 .lineLimit(1)
                 .minimumScaleFactor(0.75)
-                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+            iconButton("text.book.closed", label: "Word book") { store.present(.lexicon) }
             iconButton("tray.full", label: "Saved") { store.present(.saved) }
             iconButton("gearshape", label: "Settings") { store.present(.settings) }
         }
@@ -177,6 +160,11 @@ struct QuizView: View {
                     }
                     choice("Inscription", selected: scopeBinding.wrappedValue == .curatorial) {
                         scopeBinding.wrappedValue = .curatorial
+                    }
+                    if store.liveWork?.lineReady(.studio) == true {
+                        choice("Draft", selected: scopeBinding.wrappedValue == .studio) {
+                            scopeBinding.wrappedValue = .studio
+                        }
                     }
                 }
                 .accessibilityElement(children: .contain)
@@ -242,18 +230,17 @@ struct QuizView: View {
     }
 
     private var hero: some View {
-        GeometryReader { proxy in
-            let tall = wide ? proxy.size.height : proxy.size.width * 1.35
-            workImage
-                .frame(width: proxy.size.width, height: tall, alignment: .top)
-                .frame(width: proxy.size.width, height: proxy.size.height, alignment: .top)
-                .clipped()
-        }
-        .background(OxPalette.surface)
-        .frame(maxWidth: .infinity)
-        .frame(height: wide ? OxSpace.band * 2 : OxSpace.lg * 7)
-        .clipShape(RoundedRectangle(cornerRadius: OxRadius.card, style: .continuous))
-        .shadow(color: OxLift.color, radius: OxLift.radius, x: 0, y: OxLift.y)
+        Color.clear
+            .frame(maxWidth: .infinity)
+            .frame(height: wide ? OxSpace.band * 2 : OxSpace.lg * 5)
+            .overlay {
+                workImage
+                    .scaledToFill()
+            }
+            .clipped()
+            .background(OxPalette.surface)
+            .clipShape(RoundedRectangle(cornerRadius: OxRadius.card, style: .continuous))
+            .shadow(color: OxLift.color, radius: OxLift.radius, x: 0, y: OxLift.y)
         .overlay(alignment: .topTrailing) {
             if praise {
                 Image("bph_SuccessMark")
@@ -307,6 +294,274 @@ struct QuizView: View {
                 .lineLimit(2)
         }
         .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private var sessionHead: some View {
+        VStack(alignment: .leading, spacing: OxSpace.sm) {
+            VStack(alignment: .leading, spacing: OxSpace.xs) {
+                Text(store.sessionFiled ? "Today is filed." : store.sessionPrompt)
+                    .font(OxType.headline)
+                    .foregroundStyle(OxPalette.ink)
+                    .lineLimit(3)
+                    .minimumScaleFactor(0.8)
+                    .frame(maxWidth: .infinity, alignment: .leading)
+                if store.sessionCountLine.isEmpty == false {
+                    Text(store.sessionCountLine)
+                        .font(OxType.caption)
+                        .foregroundStyle(OxPalette.muted)
+                        .monospacedDigit()
+                        .lineLimit(1)
+                }
+            }
+            if let session = store.document.daySession, session.stops.isEmpty == false {
+                HStack(spacing: OxSpace.xs) {
+                    ForEach(Array(session.stops.enumerated()), id: \.element.id) { index, stop in
+                        stationChip(index: index, stop: stop, current: index == session.cursor)
+                    }
+                }
+                .frame(maxWidth: .infinity)
+            }
+            Button {
+                if let index = store.routeStationIndex {
+                    store.openStation(index)
+                } else {
+                    store.present(.ledger)
+                }
+            } label: {
+                HStack(alignment: .firstTextBaseline, spacing: OxSpace.sm) {
+                    Text("Next stop")
+                        .font(OxType.caption)
+                        .foregroundStyle(OxPalette.muted)
+                        .lineLimit(1)
+                        .fixedSize(horizontal: true, vertical: false)
+                    Text(store.nextStopTitle)
+                        .font(OxType.body)
+                        .foregroundStyle(OxPalette.ink)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.75)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                }
+                .frame(minHeight: OxSpace.hit)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(OxTapStyle())
+            Button {
+                store.present(.rooms)
+            } label: {
+                HStack(alignment: .firstTextBaseline, spacing: OxSpace.sm) {
+                    Text("This room")
+                        .font(OxType.caption)
+                        .foregroundStyle(OxPalette.muted)
+                        .lineLimit(1)
+                        .fixedSize(horizontal: true, vertical: false)
+                    Text(store.liveRoomTitle)
+                        .font(OxType.body)
+                        .foregroundStyle(OxPalette.ink)
+                        .lineLimit(1)
+                        .minimumScaleFactor(0.75)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                    Text("\(OxFigures.count(store.roomsWalked)) walked")
+                        .font(OxType.caption)
+                        .foregroundStyle(OxPalette.muted)
+                        .monospacedDigit()
+                        .lineLimit(1)
+                        .fixedSize(horizontal: true, vertical: false)
+                }
+                .frame(minHeight: OxSpace.hit)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(OxTapStyle())
+            Button {
+                store.present(.library)
+            } label: {
+                HStack(alignment: .firstTextBaseline, spacing: OxSpace.sm) {
+                    Text("Due today")
+                        .font(OxType.caption)
+                        .foregroundStyle(OxPalette.muted)
+                        .lineLimit(1)
+                        .fixedSize(horizontal: true, vertical: false)
+                    Text(OxFigures.count(store.dueTodayCount))
+                        .font(OxType.body)
+                        .foregroundStyle(OxPalette.ink)
+                        .monospacedDigit()
+                        .lineLimit(1)
+                    Text("Library")
+                        .font(OxType.caption)
+                        .foregroundStyle(OxPalette.muted)
+                        .lineLimit(1)
+                    Text(OxFigures.count(store.libraryCount))
+                        .font(OxType.body)
+                        .foregroundStyle(OxPalette.ink)
+                        .monospacedDigit()
+                        .lineLimit(1)
+                        .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                }
+                .frame(minHeight: OxSpace.hit)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(OxTapStyle())
+            if store.sessionFiled {
+                Button("Walk today again") { store.replayToday() }
+                    .buttonStyle(FaceButtonStyle(prominent: false))
+            }
+        }
+        .padding(OxSpace.sm)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: OxRadius.card, style: .continuous)
+                .fill(OxPalette.surface)
+        )
+    }
+
+    private func stationChip(index: Int, stop: SessionStop, current: Bool) -> some View {
+        Button {
+            store.openStation(index)
+        } label: {
+            VStack(spacing: 0) {
+                Text(OxFigures.count(index + 1))
+                    .font(OxType.micro)
+                    .foregroundStyle(current ? OxPalette.ink : OxPalette.muted)
+                    .monospacedDigit()
+                    .lineLimit(1)
+                Text(stop.kind.title)
+                    .font(OxType.micro)
+                    .foregroundStyle(OxPalette.ink)
+                    .lineLimit(1)
+                    .minimumScaleFactor(0.7)
+                Text(stop.done ? "Done" : (current ? "Now" : "Later"))
+                    .font(OxType.micro)
+                    .foregroundStyle(current ? OxPalette.ink : OxPalette.muted)
+                    .lineLimit(1)
+            }
+            .frame(minWidth: 0, maxWidth: .infinity, minHeight: OxSpace.hit)
+            .padding(.vertical, OxSpace.xs)
+            .background(
+                RoundedRectangle(cornerRadius: OxRadius.chip, style: .continuous)
+                    .fill(current ? OxPalette.accent : OxPalette.background)
+            )
+            .contentShape(RoundedRectangle(cornerRadius: OxRadius.chip, style: .continuous))
+        }
+        .buttonStyle(OxTapStyle())
+        .accessibilityLabel("\(stop.kind.title), \(stop.done ? "done" : (current ? "now" : "later"))")
+    }
+
+    private var toolPicker: some View {
+        HStack(spacing: OxSpace.xs) {
+            choice("Face", selected: store.document.studioTool == .face) {
+                store.setStudioTool(.face)
+            }
+            choice("Plough", selected: store.document.studioTool == .plough) {
+                store.setStudioTool(.plough)
+            }
+            choice("Bench", selected: store.document.studioTool == .bench) {
+                store.setStudioTool(.bench)
+            }
+            choice("Cover", selected: store.document.studioTool == .cover) {
+                store.setStudioTool(.cover)
+            }
+        }
+        .accessibilityElement(children: .contain)
+        .accessibilityLabel("Studio")
+    }
+
+    @ViewBuilder
+    private var studioPlay: some View {
+        switch store.document.studioTool {
+        case .face:
+            VStack(alignment: .leading, spacing: OxSpace.md) {
+                stichosRail
+                verbs
+            }
+        case .plough:
+            PloughBoard(store: store)
+        case .bench:
+            BenchBoard(store: store)
+        case .cover:
+            CoverBoard(store: store)
+        }
+    }
+
+    private var studioStrip: some View {
+        VStack(alignment: .leading, spacing: OxSpace.sm) {
+            Button {
+                store.present(.ledger)
+            } label: {
+                VStack(alignment: .leading, spacing: OxSpace.xs) {
+                    Text("Visit route")
+                        .font(OxType.caption)
+                        .foregroundStyle(OxPalette.muted)
+                        .lineLimit(1)
+                    Text(routeLine)
+                        .font(OxType.headline)
+                        .foregroundStyle(OxPalette.ink)
+                        .lineLimit(2)
+                }
+                .frame(maxWidth: .infinity, minHeight: OxSpace.hit, alignment: .leading)
+                .contentShape(Rectangle())
+            }
+            .buttonStyle(OxTapStyle())
+            Button("Play checkers") { store.present(.checkers) }
+                .buttonStyle(FaceButtonStyle(prominent: false))
+            HStack(spacing: OxSpace.sm) {
+                stripLink(
+                    "Word book",
+                    OxFigures.count(store.document.lexemes.count) + " words"
+                ) {
+                    store.present(.lexicon)
+                }
+                stripLink(
+                    "Hangs",
+                    OxFigures.count(store.document.hangs.count) + " walls"
+                ) {
+                    store.present(.hangs)
+                }
+            }
+            HStack(spacing: OxSpace.sm) {
+                stripLink(
+                    "Rooms",
+                    OxFigures.count(store.roomRows.count) + " rooms"
+                ) {
+                    store.present(.rooms)
+                }
+                stripLink(
+                    "Pairs",
+                    OxFigures.count(store.document.pairNotes.count) + " pairs"
+                ) {
+                    store.present(.pairs)
+                }
+            }
+        }
+        .padding(OxSpace.sm)
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .background(
+            RoundedRectangle(cornerRadius: OxRadius.card, style: .continuous)
+                .fill(OxPalette.surface)
+        )
+    }
+
+    private var routeLine: String {
+        if store.document.route.isEmpty { return "Plan the next paintings." }
+        if store.routeLeft == 0 { return "Every stop is walked." }
+        return OxFigures.count(store.routeLeft) + " still to walk."
+    }
+
+    private func stripLink(_ title: String, _ value: String, action: @escaping () -> Void) -> some View {
+        Button(action: action) {
+            VStack(alignment: .leading, spacing: OxSpace.xs) {
+                Text(title)
+                    .font(OxType.caption)
+                    .foregroundStyle(OxPalette.muted)
+                    .lineLimit(1)
+                Text(value)
+                    .font(OxType.body)
+                    .foregroundStyle(OxPalette.ink)
+                    .monospacedDigit()
+                    .lineLimit(1)
+            }
+            .frame(maxWidth: .infinity, minHeight: OxSpace.hit, alignment: .leading)
+            .contentShape(Rectangle())
+        }
+        .buttonStyle(OxTapStyle())
     }
 
     private var stichosRail: some View {
@@ -485,7 +740,7 @@ struct QuizView: View {
                 .lineLimit(1)
                 .minimumScaleFactor(0.7)
             Text(label)
-                .font(OxType.micro)
+                .font(OxType.caption)
                 .foregroundStyle(OxPalette.muted)
                 .lineLimit(2)
                 .minimumScaleFactor(0.8)
@@ -513,6 +768,7 @@ struct QuizView: View {
         switch store.liveFurrow?.field {
         case .title: return "title line"
         case .curatorial: return "gallery note"
+        case .studio: return "your caption"
         default: return "maker line"
         }
     }
@@ -577,14 +833,6 @@ struct QuizView: View {
         }
     }
 
-    private func practiceAgain() {
-        guard let work = store.facedWorks.first ?? store.works.first else { return }
-        let field = work.chosenField() ?? (work.lineReady(.curatorial) ? FurrowField.curatorial : nil)
-        if let field {
-            store.reopenForPractice(id: work.id, field: field)
-        }
-    }
-
     private func iconButton(_ symbol: String, label: String, action: @escaping () -> Void) -> some View {
         Button(action: action) {
             Image(systemName: symbol)
@@ -635,7 +883,7 @@ struct OxDossierCard: View {
                 .font(OxType.caption)
                 .foregroundStyle(OxPalette.muted)
                 .lineLimit(1)
-            TextField("Add a private note", text: $draft, axis: .vertical)
+            TextField("", text: $draft, prompt: Text("Add a private note").foregroundStyle(OxPalette.muted), axis: .vertical)
                 .lineLimit(2...5)
                 .font(OxType.body)
                 .foregroundStyle(OxPalette.ink)

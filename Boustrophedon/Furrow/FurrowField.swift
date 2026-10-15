@@ -5,4 +5,5 @@ enum FurrowField: String, Codable, Equatable, Sendable, CaseIterable {
     case artist
     case title
     case curatorial
+    case studio
 }

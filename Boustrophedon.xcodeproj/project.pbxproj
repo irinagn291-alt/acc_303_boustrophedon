@@ -11,6 +11,7 @@
 		0AD9EDFCD37772061ACFA83A /* CatalogSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76CD37B4E2687A3D7789DA5B /* CatalogSearch.swift */; };
 		0B90661AB1AB180CB882D5E0 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = E57DE45F3542407009729285 /* Alamofire */; };
 		0C195A3488DBC933FEC4A26E /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F054DA40E8856602864BAF2F /* OnboardingView.swift */; };
+		0DEF6B697705082C63A4AE07 /* HangsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2897CC5C060D9B621AB94441 /* HangsView.swift */; };
 		117A5D7CA4210550E08A0D1A /* Boustrophedon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3E8AEB7A65C4D7DE16A4C069 /* Boustrophedon.swift */; };
 		1432E4068C69E7E4319A1B9C /* OxMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFA357942629CB9B8E98239 /* OxMotion.swift */; };
 		1AFABBA8321FE980C4F44BCC /* OxPalette.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8FD183B3BA244B15AC55DA4 /* OxPalette.swift */; };
@@ -18,13 +19,20 @@
 		1BE7ACC07462D0290638B9D9 /* OneSignalExtension in Frameworks */ = {isa = PBXBuildFile; productRef = F370F429BA72A731D0EE515C /* OneSignalExtension */; };
 		2A569611C5CE2FE47021D5AF /* Furrow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D34D84FA9F874ABC7C4647 /* Furrow.swift */; };
 		2DA6832349FD5BF8A95A0A21 /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD988CFC59E05C9FD4E02371 /* Work.swift */; };
+		2DB2D9D2307141B69D53C36E /* PairsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B20F17B2C7D46F58EDC2CA /* PairsView.swift */; };
 		3490B85927A1753D547E5D29 /* YawMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = 736B5112A8D6E8277384511C /* YawMark.swift */; };
+		41199015BF638FB6ADF43287 /* SessionPlan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C1B80E88806C72440EBF6AB /* SessionPlan.swift */; };
 		413006FB146B1A81D751F550 /* OneSignalInAppMessages in Frameworks */ = {isa = PBXBuildFile; productRef = A149AA0BE65C7040BB8D365F /* OneSignalInAppMessages */; };
+		4296B4B1015A4B6054ADB0F9 /* RoomsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E57E95C58C6597CDB9D586B /* RoomsView.swift */; };
 		477EA472B292C327F365D4AA /* ExploreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6F5D9EBAF72B7EBE37C364 /* ExploreView.swift */; };
+		517509871C965A0C534F592B /* NoticesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4353AE1C45179339DBC941F /* NoticesView.swift */; };
+		5347945AF4008C9CEC7899F5 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CBB18E1BE2285CDA2C5321E /* LibraryView.swift */; };
 		55A516D0FFC83152BB455F2B /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9BF0B55F773F8164EE2328A /* NotificationService.swift */; };
 		5BE8580481E1FF1AF9690514 /* SavedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2606318F8BBF663BB907C15E /* SavedView.swift */; };
+		5C6D2650F271CCD23F1FC9B6 /* StudioModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 301183238CF1554A543B6DA4 /* StudioModels.swift */; };
 		61DE71D252A50B1CE002122C /* OxRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0CA0CBA6C15F3EF3B080FC2 /* OxRadius.swift */; };
 		63E30E75F4C3A455ED2C5793 /* OneSignalFramework in Frameworks */ = {isa = PBXBuildFile; productRef = 1F5E91582252AD055263BC0D /* OneSignalFramework */; };
+		677B17BCC35351DCE081AB75 /* StudioBoards.swift in Sources */ = {isa = PBXBuildFile; fileRef = A4A8F593220E98DF3F302DAF /* StudioBoards.swift */; };
 		6934BCB6E4A3A72F020F247E /* OneSignalNotificationServiceExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 4A0EF20627D327808EDB334E /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		6D141AD4B918931AF078BF35 /* OxFigures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 275BBF3263700EAE9E0EF8F4 /* OxFigures.swift */; };
 		75D99832A730F3CBC6725D84 /* GalleryShelf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441A3001B6A8D73F23E9A03B /* GalleryShelf.swift */; };
@@ -32,12 +40,15 @@
 		77769658CB153C1013718452 /* FurrowDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD271B99AAAB6CC6175084EF /* FurrowDocument.swift */; };
 		7802FBEBB653C13E2A68A928 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1395A52C8AA3FB4F1D7EF2D /* AppDelegate.swift */; };
 		7C0860944DC304B4F693A272 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9D5EE3D0C88F1C7597E65C8 /* SettingsView.swift */; };
+		7FEC32061DCACD0F01F8E9FC /* CheckersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48242FBA8B9354B2107C1F5C /* CheckersView.swift */; };
 		8034294D5FF3D1B3CB7A7246 /* FurrowVault.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A9217A25F901AD931BF4610 /* FurrowVault.swift */; };
 		835A38F05FF8FA6B970E415B /* DayKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D72107806F6070456DA6414 /* DayKey.swift */; };
 		892753D587D1416397501E4B /* FaceMark.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34B7795010D1AA7291D8A0E /* FaceMark.swift */; };
 		900268F4699CB1163994CBD0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C0379081C44BF4A1C08FB63 /* Assets.xcassets */; };
 		90ED4843D71EDDC97ADE5512 /* OxFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FA5C97A47D32A5164438B76 /* OxFlowLayout.swift */; };
 		91B702EF9BB89FE82DD08791 /* FurrowIntents.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9DB479C0BB2A7AC58DA3A62 /* FurrowIntents.swift */; };
+		9531CAECB8F3671C868A41F2 /* CheckersRules.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302DE6A4D4E098E1CB3756A1 /* CheckersRules.swift */; };
+		95693FB2AB37AF3058424873 /* LedgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F43F48E9CD77FCE60A073A7 /* LedgerView.swift */; };
 		973332B2DA1248EDECD1EF3E /* OxSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00084FE51FF5EF0839F9BFB6 /* OxSpace.swift */; };
 		9D194DE33362783AC90FA192 /* BoustrophedonApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3AAF71EB64F8A3F81EFC9B9 /* BoustrophedonApp.swift */; };
 		A8B693FA47E11A4C1CC18F42 /* BoustrophedonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78729740F40E2CC5F392705E /* BoustrophedonTests.swift */; };
@@ -48,10 +59,12 @@
 		D146D1353ABD6A4BD3931947 /* OxType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 805C8B7CE4C68E5F6AE4EE89 /* OxType.swift */; };
 		D47E78909580C7AB6217055A /* QuietPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15091DE609CD440A865945E7 /* QuietPage.swift */; };
 		E4D96159185954DA07E61AC1 /* FurrowTray.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F05C9A6AA6AF3937800B99A /* FurrowTray.swift */; };
+		E52B8E2BE6ACCD53AA7036E4 /* LexiconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA07D08E4C2A6484E714E86B /* LexiconView.swift */; };
 		EC4F7C88F76B90D4B984B742 /* ReviewScreenKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = F593873B8667F7CB4823C551 /* ReviewScreenKey.swift */; };
 		ED8CABCFD73B7A58121851DF /* FurrowStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E615C1B6B21ECBBBFF38262 /* FurrowStore.swift */; };
 		F8779DFD3254BF746EDE61B7 /* Turn.swift in Sources */ = {isa = PBXBuildFile; fileRef = B7653AA76CE02614DABC053F /* Turn.swift */; };
 		F9843C938350F0A605AFCE71 /* APIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127D5630A6482467401A5331 /* APIConfig.swift */; };
+		F9AD7AA2837D7E462DE8EC15 /* CoverBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A24A3A56B3EBFAB7143FDB /* CoverBoard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,19 +101,27 @@
 /* Begin PBXFileReference section */
 		00084FE51FF5EF0839F9BFB6 /* OxSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxSpace.swift; sourceTree = "<group>"; };
 		0A9217A25F901AD931BF4610 /* FurrowVault.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowVault.swift; sourceTree = "<group>"; };
+		0C1B80E88806C72440EBF6AB /* SessionPlan.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionPlan.swift; sourceTree = "<group>"; };
 		0D72107806F6070456DA6414 /* DayKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DayKey.swift; sourceTree = "<group>"; };
 		127D5630A6482467401A5331 /* APIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIConfig.swift; sourceTree = "<group>"; };
 		15091DE609CD440A865945E7 /* QuietPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuietPage.swift; sourceTree = "<group>"; };
+		19A24A3A56B3EBFAB7143FDB /* CoverBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoverBoard.swift; sourceTree = "<group>"; };
 		1C48410E9F7AEDC6CB5C8A37 /* Stichos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stichos.swift; sourceTree = "<group>"; };
 		2293312F53EAB5DD08FDA60C /* FurrowField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowField.swift; sourceTree = "<group>"; };
 		2606318F8BBF663BB907C15E /* SavedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedView.swift; sourceTree = "<group>"; };
 		275BBF3263700EAE9E0EF8F4 /* OxFigures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxFigures.swift; sourceTree = "<group>"; };
+		2897CC5C060D9B621AB94441 /* HangsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangsView.swift; sourceTree = "<group>"; };
 		2AFA357942629CB9B8E98239 /* OxMotion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxMotion.swift; sourceTree = "<group>"; };
 		2F05C9A6AA6AF3937800B99A /* FurrowTray.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowTray.swift; sourceTree = "<group>"; };
+		301183238CF1554A543B6DA4 /* StudioModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioModels.swift; sourceTree = "<group>"; };
+		302DE6A4D4E098E1CB3756A1 /* CheckersRules.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckersRules.swift; sourceTree = "<group>"; };
 		3E8AEB7A65C4D7DE16A4C069 /* Boustrophedon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Boustrophedon.swift; sourceTree = "<group>"; };
+		3F43F48E9CD77FCE60A073A7 /* LedgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LedgerView.swift; sourceTree = "<group>"; };
 		3FA5C97A47D32A5164438B76 /* OxFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxFlowLayout.swift; sourceTree = "<group>"; };
 		441A3001B6A8D73F23E9A03B /* GalleryShelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryShelf.swift; sourceTree = "<group>"; };
+		48242FBA8B9354B2107C1F5C /* CheckersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckersView.swift; sourceTree = "<group>"; };
 		4A0EF20627D327808EDB334E /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4CBB18E1BE2285CDA2C5321E /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		4E615C1B6B21ECBBBFF38262 /* FurrowStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowStore.swift; sourceTree = "<group>"; };
 		5D6F5D9EBAF72B7EBE37C364 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
 		736B5112A8D6E8277384511C /* YawMark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YawMark.swift; sourceTree = "<group>"; };
@@ -112,7 +133,9 @@
 		8C0379081C44BF4A1C08FB63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E11526003AA3D4B4D80D1C0 /* FaceButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceButtonStyle.swift; sourceTree = "<group>"; };
 		91D34D84FA9F874ABC7C4647 /* Furrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Furrow.swift; sourceTree = "<group>"; };
+		9E57E95C58C6597CDB9D586B /* RoomsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomsView.swift; sourceTree = "<group>"; };
 		A3AAF71EB64F8A3F81EFC9B9 /* BoustrophedonApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoustrophedonApp.swift; sourceTree = "<group>"; };
+		A4A8F593220E98DF3F302DAF /* StudioBoards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudioBoards.swift; sourceTree = "<group>"; };
 		A9D5EE3D0C88F1C7597E65C8 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		B1395A52C8AA3FB4F1D7EF2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B259A98CC08E0539D0AE2318 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -122,8 +145,11 @@
 		B9DB479C0BB2A7AC58DA3A62 /* FurrowIntents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowIntents.swift; sourceTree = "<group>"; };
 		BC9D4C6404E6213302EA5CAD /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		BD988CFC59E05C9FD4E02371 /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
+		D3B20F17B2C7D46F58EDC2CA /* PairsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PairsView.swift; sourceTree = "<group>"; };
 		D48EA6DBA60A98E77DAC2E6A /* BoustrophedonTests.xctest */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.cfbundle; path = BoustrophedonTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4353AE1C45179339DBC941F /* NoticesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticesView.swift; sourceTree = "<group>"; };
 		E907EFA7EBD422DDE2ED359D /* FurrowLinks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowLinks.swift; sourceTree = "<group>"; };
+		EA07D08E4C2A6484E714E86B /* LexiconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LexiconView.swift; sourceTree = "<group>"; };
 		F054DA40E8856602864BAF2F /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		F0CA0CBA6C15F3EF3B080FC2 /* OxRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxRadius.swift; sourceTree = "<group>"; };
 		F593873B8667F7CB4823C551 /* ReviewScreenKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewScreenKey.swift; sourceTree = "<group>"; };
@@ -222,6 +248,9 @@
 			isa = PBXGroup;
 			children = (
 				3E8AEB7A65C4D7DE16A4C069 /* Boustrophedon.swift */,
+				302DE6A4D4E098E1CB3756A1 /* CheckersRules.swift */,
+				48242FBA8B9354B2107C1F5C /* CheckersView.swift */,
+				19A24A3A56B3EBFAB7143FDB /* CoverBoard.swift */,
 				0D72107806F6070456DA6414 /* DayKey.swift */,
 				8E11526003AA3D4B4D80D1C0 /* FaceButtonStyle.swift */,
 				91D34D84FA9F874ABC7C4647 /* Furrow.swift */,
@@ -232,6 +261,11 @@
 				4E615C1B6B21ECBBBFF38262 /* FurrowStore.swift */,
 				2F05C9A6AA6AF3937800B99A /* FurrowTray.swift */,
 				0A9217A25F901AD931BF4610 /* FurrowVault.swift */,
+				2897CC5C060D9B621AB94441 /* HangsView.swift */,
+				3F43F48E9CD77FCE60A073A7 /* LedgerView.swift */,
+				EA07D08E4C2A6484E714E86B /* LexiconView.swift */,
+				4CBB18E1BE2285CDA2C5321E /* LibraryView.swift */,
+				E4353AE1C45179339DBC941F /* NoticesView.swift */,
 				F054DA40E8856602864BAF2F /* OnboardingView.swift */,
 				275BBF3263700EAE9E0EF8F4 /* OxFigures.swift */,
 				3FA5C97A47D32A5164438B76 /* OxFlowLayout.swift */,
@@ -240,10 +274,15 @@
 				F0CA0CBA6C15F3EF3B080FC2 /* OxRadius.swift */,
 				00084FE51FF5EF0839F9BFB6 /* OxSpace.swift */,
 				805C8B7CE4C68E5F6AE4EE89 /* OxType.swift */,
+				D3B20F17B2C7D46F58EDC2CA /* PairsView.swift */,
 				15091DE609CD440A865945E7 /* QuietPage.swift */,
 				BC9D4C6404E6213302EA5CAD /* QuizView.swift */,
 				F593873B8667F7CB4823C551 /* ReviewScreenKey.swift */,
+				9E57E95C58C6597CDB9D586B /* RoomsView.swift */,
+				0C1B80E88806C72440EBF6AB /* SessionPlan.swift */,
 				A9D5EE3D0C88F1C7597E65C8 /* SettingsView.swift */,
+				A4A8F593220E98DF3F302DAF /* StudioBoards.swift */,
+				301183238CF1554A543B6DA4 /* StudioModels.swift */,
 			);
 			path = Furrow;
 			sourceTree = "<group>";
@@ -413,7 +452,10 @@
 				9D194DE33362783AC90FA192 /* BoustrophedonApp.swift in Sources */,
 				76BA153A8348DDB28E1B8F42 /* CatalogClient.swift in Sources */,
 				0AD9EDFCD37772061ACFA83A /* CatalogSearch.swift in Sources */,
+				9531CAECB8F3671C868A41F2 /* CheckersRules.swift in Sources */,
+				7FEC32061DCACD0F01F8E9FC /* CheckersView.swift in Sources */,
 				00A13F6B2FBE328768E37D9E /* ContentView.swift in Sources */,
+				F9AD7AA2837D7E462DE8EC15 /* CoverBoard.swift in Sources */,
 				835A38F05FF8FA6B970E415B /* DayKey.swift in Sources */,
 				477EA472B292C327F365D4AA /* ExploreView.swift in Sources */,
 				1BE6430DEB4D5EB527686A44 /* FaceButtonStyle.swift in Sources */,
@@ -427,6 +469,11 @@
 				E4D96159185954DA07E61AC1 /* FurrowTray.swift in Sources */,
 				8034294D5FF3D1B3CB7A7246 /* FurrowVault.swift in Sources */,
 				75D99832A730F3CBC6725D84 /* GalleryShelf.swift in Sources */,
+				0DEF6B697705082C63A4AE07 /* HangsView.swift in Sources */,
+				95693FB2AB37AF3058424873 /* LedgerView.swift in Sources */,
+				E52B8E2BE6ACCD53AA7036E4 /* LexiconView.swift in Sources */,
+				5347945AF4008C9CEC7899F5 /* LibraryView.swift in Sources */,
+				517509871C965A0C534F592B /* NoticesView.swift in Sources */,
 				0C195A3488DBC933FEC4A26E /* OnboardingView.swift in Sources */,
 				6D141AD4B918931AF078BF35 /* OxFigures.swift in Sources */,
 				90ED4843D71EDDC97ADE5512 /* OxFlowLayout.swift in Sources */,
@@ -435,12 +482,17 @@
 				61DE71D252A50B1CE002122C /* OxRadius.swift in Sources */,
 				973332B2DA1248EDECD1EF3E /* OxSpace.swift in Sources */,
 				D146D1353ABD6A4BD3931947 /* OxType.swift in Sources */,
+				2DB2D9D2307141B69D53C36E /* PairsView.swift in Sources */,
 				D47E78909580C7AB6217055A /* QuietPage.swift in Sources */,
 				C7F82D7996B923A6D277322D /* QuizView.swift in Sources */,
 				EC4F7C88F76B90D4B984B742 /* ReviewScreenKey.swift in Sources */,
+				4296B4B1015A4B6054ADB0F9 /* RoomsView.swift in Sources */,
 				5BE8580481E1FF1AF9690514 /* SavedView.swift in Sources */,
+				41199015BF638FB6ADF43287 /* SessionPlan.swift in Sources */,
 				7C0860944DC304B4F693A272 /* SettingsView.swift in Sources */,
 				C08DD287F6585ACD9EF99827 /* Stichos.swift in Sources */,
+				677B17BCC35351DCE081AB75 /* StudioBoards.swift in Sources */,
+				5C6D2650F271CCD23F1FC9B6 /* StudioModels.swift in Sources */,
 				F8779DFD3254BF746EDE61B7 /* Turn.swift in Sources */,
 				2DA6832349FD5BF8A95A0A21 /* Work.swift in Sources */,
 				3490B85927A1753D547E5D29 /* YawMark.swift in Sources */,
@@ -486,7 +538,7 @@
 				CODE_SIGN_ENTITLEMENTS = Support/Boustrophedon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Support/Boustrophedon-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Boustrophedon;
@@ -502,7 +554,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow;
 				PRODUCT_NAME = Boustrophedon;
 				SDKROOT = iphoneos;
@@ -541,7 +593,7 @@
 				CODE_SIGN_ENTITLEMENTS = Support/Boustrophedon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Support/Boustrophedon-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Boustrophedon;
@@ -557,7 +609,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow;
 				PRODUCT_NAME = Boustrophedon;
 				SDKROOT = iphoneos;
@@ -573,7 +625,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Support/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Support/OneSignalNotificationServiceExtension-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
@@ -583,7 +635,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow.onesignal;
 				PRODUCT_NAME = OneSignalNotificationServiceExtension;
 				SDKROOT = iphoneos;
@@ -599,7 +651,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Support/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Support/OneSignalNotificationServiceExtension-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
@@ -609,7 +661,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.4.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow.onesignal;
 				PRODUCT_NAME = OneSignalNotificationServiceExtension;
 				SDKROOT = iphoneos;

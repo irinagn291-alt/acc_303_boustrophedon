@@ -1,22 +1,26 @@
 <!-- gf-brief source=aa75eb8a240216c3b2cf1e9fb34f6a9337a3f01f97772432911ed1f97790c317 written=2026-09-30T16:10:41+03:00 -->
 # Boustrophedon
 ## What it is
-Boustrophedon is a short practice app for facing National Gallery painting captions. You save a painting, lay its maker or title as a line where every other word runs backward, then tap those words until they read forward. It is for anyone who wants an on-device word puzzle tied to real gallery works.
+Boustrophedon is a daily practice for National Gallery captions. Home is titled "Today" and opens on one of five stops: Bench (spell a miss), Plough (walk the line left, then back), Face (tap every backward word), Route (the next painting on the visit list), and Recall (spell a word from the book). All five must be finished before "Today is filed." Tomorrow cuts a new five.
 
 ## Launch and onboarding
 On a cold launch the screen can sit blank for a short moment. The system may show the notifications permission alert. There is no in-app permission screen and no custom notifications usage string.
 
 If welcome has not been finished, a full-screen welcome runs in three steps. Page dots are visible but not tappable. There is no skip and no swipe; only the bottom button advances.
 
-1. Title **"A line for captions."** Body **"Save a National Gallery painting, then lay its maker or title."** Button **"Next"**.
-2. Title **"Face each backward word."** Body **"Every other word runs backward. Tap it to set the letters right."** Button **"Next"**.
-3. Title **"Keep the faced line."** Body **"Misses stay so you can review them. All of it stays on this device."** Button **"Continue"** (finishes welcome and opens home).
+1. Title **"Today is waiting."** Body **"Five stops are already cut. Spell a miss, walk a line, face the backward words, take the next route stop, then recall a word."** Button **"Next"**.
+2. Title **"Three ways to read."** Body **"Face sets a backward word right. Plough walks the line left, then back. Bench spells one word forward."** Button **"Next"**.
+3. Title **"Tomorrow cuts a new five."** Body **"Hangs, the word book, and the route stay on this device. Today files when all five stops are done."** Button **"Continue"** (finishes welcome and opens home).
 
 If welcome is already done, home opens directly.
 
 ## Screens
-### Face the words (home)
-Title **"Face the words"**. There is no tab bar. Toolbar icons **"Saved"** and **"Settings"** open those sheets. Button **"Explore"** opens the Explore sheet.
+### Today (home)
+Title **"Today"**. There is no tab bar. Toolbar icons **"Word book"**, **"Saved"**, and **"Settings"** open those sheets. Button **"Explore"** opens the Explore sheet.
+
+The top card is today's five. Chips read **"Bench"**, **"Plough"**, **"Face"**, **"Route"**, **"Recall"**, each marked **"Now"**, **"Later"**, or **"Done"**. The sentence is **"Spell [word]. It was a miss."**, **"Walk this caption with the ox."**, **"Face each backward word."**, **"This painting is the next stop."**, or **"Spell [word] from the book."** The count reads like **"1 of 5, 0 filed"**. **"Next stop"** names the next route painting. When every chip says **"Done"**, the card reads **"Today is filed."** and offers **"Walk today again"**.
+
+Under the painting, **"Face"**, **"Plough"**, and **"Bench"** change the drill on the open line. A stop files only when that drill is finished.
 
 When no saved painting is ready to work on: full-page empty state **"Crate level."** / **"Save a work, then face."** with button **"Explore"**.
 

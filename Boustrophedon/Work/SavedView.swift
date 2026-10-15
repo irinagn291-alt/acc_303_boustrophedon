@@ -46,7 +46,7 @@ struct SavedView: View {
 
     private var list: some View {
         List {
-            Section("Mastery") {
+            Section {
                 VStack(alignment: .leading, spacing: OxSpace.sm) {
                     HStack(alignment: .firstTextBaseline, spacing: OxSpace.md) {
                         tally(OxFigures.count(store.accuracyPercent) + "%", "Accuracy")
@@ -62,8 +62,13 @@ struct SavedView: View {
                     }
                 }
                 .listRowBackground(OxPalette.surface)
+            } header: {
+                Text("Mastery")
+                    .font(OxType.caption)
+                    .foregroundStyle(OxPalette.muted)
+                    .textCase(nil)
             }
-            Section("Paintings") {
+            Section {
                 ForEach(store.works) { work in
                     Button {
                         pick = OxWorkPick(id: work.id)
@@ -94,9 +99,14 @@ struct SavedView: View {
                     .buttonStyle(OxTapStyle())
                     .listRowBackground(OxPalette.surface)
                 }
+            } header: {
+                Text("Paintings")
+                    .font(OxType.caption)
+                    .foregroundStyle(OxPalette.muted)
+                    .textCase(nil)
             }
             if store.document.yawMarks.isEmpty == false {
-                Section("Yaws") {
+                Section {
                     ForEach(store.document.yawMarks) { mark in
                         let name = store.works.first { $0.id == mark.workId }?.title ?? "Painting"
                         VStack(alignment: .leading, spacing: OxSpace.xs) {
@@ -112,6 +122,11 @@ struct SavedView: View {
                         .frame(minHeight: OxSpace.hit, alignment: .leading)
                         .listRowBackground(OxPalette.surface)
                     }
+                } header: {
+                    Text("Yaws")
+                        .font(OxType.caption)
+                        .foregroundStyle(OxPalette.muted)
+                        .textCase(nil)
                 }
             }
         }
@@ -163,6 +178,7 @@ struct OxStudySheet: View {
     var workId: String
     @State private var draft = ""
     @State private var didPull = false
+    @State private var routeFault = ""
 
     private var work: Work? {
         store.works.first { $0.id == workId }
@@ -201,13 +217,35 @@ struct OxStudySheet: View {
                         Text("Your note")
                             .font(OxType.caption)
                             .foregroundStyle(OxPalette.muted)
-                        TextField("Add a private note", text: $draft, axis: .vertical)
+                        TextField("", text: $draft, prompt: Text("Add a private note").foregroundStyle(OxPalette.muted), axis: .vertical)
+                            .foregroundStyle(OxPalette.ink)
                             .lineLimit(2...5)
                             .font(OxType.body)
                             .frame(minHeight: OxSpace.hit, alignment: .topLeading)
                         practiceButton("Practice maker", .artist, ready: work.lineReady(.artist))
                         practiceButton("Practice title", .title, ready: work.lineReady(.title))
                         practiceButton("Practice inscription", .curatorial, ready: work.lineReady(.curatorial))
+                        practiceButton("Practice draft", .studio, ready: work.lineReady(.studio))
+                        Button("Add to route") {
+                            if store.addToRoute(workId: workId) == false {
+                                routeFault = "That painting is already on the route."
+                            } else {
+                                routeFault = "Added to the route."
+                            }
+                        }
+                        .buttonStyle(FaceButtonStyle(prominent: false))
+                        Button("Hang this painting") {
+                            _ = store.fileOntoHang(workId: workId)
+                            routeFault = "Filed on a hang."
+                        }
+                        .buttonStyle(FaceButtonStyle(prominent: false))
+                        if routeFault.isEmpty == false {
+                            Text(routeFault)
+                                .font(OxType.caption)
+                                .foregroundStyle(OxPalette.ink)
+                                .lineLimit(2)
+                        }
+                        StudioDrafts(store: store, workId: workId)
                     } else {
                         Text("That painting is no longer in the crate.")
                             .font(OxType.body)

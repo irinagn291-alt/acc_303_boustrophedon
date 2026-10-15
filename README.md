@@ -1,6 +1,6 @@
 # Boustrophedon
 
-Face each backward word on a saved National Gallery caption. People who already keep paintings on this device turn a maker name or a title into an ox-plough line, then tap every retrograde stichos until the work shelves as faced.
+Each day cuts five stops on a National Gallery caption: spell a miss, walk the line with the ox, face the backward words, open the next painting on the route, then recall a word from the book. Tomorrow cuts a new five. Hangs, the route, and the word book stay on this device.
 
 ## Architecture
 
@@ -10,7 +10,7 @@ That fold fits the job because the home verb is sequential and local: one open f
 
 ## Turn-then-face
 
-Home never leaves the furrow. Turn samples a saved work that is not faced and whose chosen field still has two tokens. Face files when the tap hits a still-backward word. The last true face folds the work to Saved. Empty crate writes Level. That is the reason to open this app instead of a gallery browser.
+Home never leaves the furrow. Turn samples a saved work that is not faced and whose chosen field still has two tokens. Face files when the tap hits a still-backward word. The last true face folds the work to Saved. Empty crate writes Level. Plough, bench, hangs, the route, and the word book sit on that same fold. They do not add a fourth case.
 
 ## Art
 

@@ -23,6 +23,14 @@ enum FurrowLinks {
         case "explore": return .explore
         case "saved": return .saved
         case "settings": return .settings
+        case "lexicon", "book": return .lexicon
+        case "hangs", "hang": return .hangs
+        case "ledger", "route": return .ledger
+        case "rooms", "room": return .rooms
+        case "pairs", "pair": return .pairs
+        case "notices", "notice": return .notices
+        case "checkers": return .checkers
+        case "library": return .library
         default: return nil
         }
     }
