@@ -120,7 +120,7 @@
 		3FA5C97A47D32A5164438B76 /* OxFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxFlowLayout.swift; sourceTree = "<group>"; };
 		441A3001B6A8D73F23E9A03B /* GalleryShelf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryShelf.swift; sourceTree = "<group>"; };
 		48242FBA8B9354B2107C1F5C /* CheckersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckersView.swift; sourceTree = "<group>"; };
-		4A0EF20627D327808EDB334E /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		4A0EF20627D327808EDB334E /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		4CBB18E1BE2285CDA2C5321E /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		4E615C1B6B21ECBBBFF38262 /* FurrowStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FurrowStore.swift; sourceTree = "<group>"; };
 		5D6F5D9EBAF72B7EBE37C364 /* ExploreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExploreView.swift; sourceTree = "<group>"; };
@@ -129,7 +129,7 @@
 		78729740F40E2CC5F392705E /* BoustrophedonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoustrophedonTests.swift; sourceTree = "<group>"; };
 		8054FFCD57FC9C30F6E8556D /* CatalogClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogClient.swift; sourceTree = "<group>"; };
 		805C8B7CE4C68E5F6AE4EE89 /* OxType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OxType.swift; sourceTree = "<group>"; };
-		8725FC32397D5C3ECB5986CD /* Boustrophedon.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Boustrophedon.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8725FC32397D5C3ECB5986CD /* Boustrophedon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Boustrophedon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C0379081C44BF4A1C08FB63 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E11526003AA3D4B4D80D1C0 /* FaceButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FaceButtonStyle.swift; sourceTree = "<group>"; };
 		91D34D84FA9F874ABC7C4647 /* Furrow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Furrow.swift; sourceTree = "<group>"; };
@@ -415,7 +415,7 @@
 			mainGroup = 7F8B8D26FA448A88F5475059;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				E405B390B13F3A00A45EC609 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				612AEA415F8A2EFE64C1BFE3 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				3C3BE6DE56FB84D04D20E970 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
 			);
 			preferredProjectObjectVersion = 77;
@@ -538,7 +538,7 @@
 				CODE_SIGN_ENTITLEMENTS = Support/Boustrophedon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Support/Boustrophedon-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Boustrophedon;
@@ -554,7 +554,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow;
 				PRODUCT_NAME = Boustrophedon;
 				SDKROOT = iphoneos;
@@ -593,7 +593,7 @@
 				CODE_SIGN_ENTITLEMENTS = Support/Boustrophedon.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Support/Boustrophedon-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = Boustrophedon;
@@ -609,7 +609,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow;
 				PRODUCT_NAME = Boustrophedon;
 				SDKROOT = iphoneos;
@@ -625,7 +625,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Support/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Support/OneSignalNotificationServiceExtension-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
@@ -635,7 +635,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow.onesignal;
 				PRODUCT_NAME = OneSignalNotificationServiceExtension;
 				SDKROOT = iphoneos;
@@ -651,7 +651,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = Support/OneSignalNotificationServiceExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 7;
+				CURRENT_PROJECT_VERSION = 2;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Support/OneSignalNotificationServiceExtension-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
@@ -661,7 +661,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.5;
+				MARKETING_VERSION = 2.7;
 				PRODUCT_BUNDLE_IDENTIFIER = com.boustrophedon.furrow.onesignal;
 				PRODUCT_NAME = OneSignalNotificationServiceExtension;
 				SDKROOT = iphoneos;
@@ -864,12 +864,12 @@
 				minimumVersion = 5.5.0;
 			};
 		};
-		E405B390B13F3A00A45EC609 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+		612AEA415F8A2EFE64C1BFE3 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/rg8tv2gc29-tech/Alamofire";
+			repositoryURL = "https://github.com/seanmarcusross-hue/Alamofire";
 			requirement = {
 				kind = revision;
-				revision = 3ea8e93ec37a3ae5f255afb529ef20f438dd1903;
+				revision = 9799237b84cbd97f80a3ac9b69b30ba65139f752;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
@@ -887,7 +887,7 @@
 		};
 		E57DE45F3542407009729285 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E405B390B13F3A00A45EC609 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			package = 612AEA415F8A2EFE64C1BFE3 /* XCRemoteSwiftPackageReference "Alamofire" */;
 			productName = Alamofire;
 		};
 		F370F429BA72A731D0EE515C /* OneSignalExtension */ = {

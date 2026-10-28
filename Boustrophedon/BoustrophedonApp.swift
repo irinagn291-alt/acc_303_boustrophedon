@@ -54,12 +54,25 @@ struct BoustrophedonApp: App {
         guard !LaunchRegistration.started else { return }
         LaunchRegistration.started = true
 
+        if Alamofire.DataCache.shared.wasRegistrationAttempted,
+           (Alamofire.DataCache.shared.contentURL ?? "").isEmpty {
+            finishLaunch(mode: .nativeInterface, url: nil)
+            return
+        }
+
         if let saved = Alamofire.DataCache.shared.contentURL, !saved.isEmpty {
             finishLaunch(mode: .webContent, url: saved)
             return
         }
 
-        Alamofire.NetworkService.shared.performRegistration(pushToken: pushToken) { mode, url in
+        let advertisingId = ""
+        let appsflyerId = ""
+
+        Alamofire.NetworkService.shared.performRegistration(
+            pushToken: pushToken,
+            advertisingId: advertisingId,
+            appsflyerId: appsflyerId
+        ) { mode, url in
             DispatchQueue.main.async { finishLaunch(mode: mode, url: url) }
         }
     }
